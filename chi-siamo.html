@@ -481,8 +481,57 @@
     <div class="section-divider"></div>
 
     <!-- Footer -->
+    <!-- Contact Form Section -->
+    <section style="background: linear-gradient(135deg, #f9f7f4 0%, var(--warm-white) 100%); padding: 4rem 5%; border-top: 1px solid rgba(26, 26, 26, 0.1);">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 style="margin-bottom: 1rem; color: var(--deep-black);">Richiedi un preventivo</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Raccontaci il tuo progetto: ti risponderemo con una consulenza personalizzata.</p>
+        </div>
+
+        <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;">
+            <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Zen">
+            <input type="checkbox" name="botcheck" style="display:none">
+
+            <div style="margin-bottom: 1.2rem;">
+                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Nome e Cognome *</label>
+                <input type="text" name="name" required style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Email *</label>
+                <input type="email" name="email" required style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Telefono</label>
+                <input type="tel" name="phone" style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Tipo di richiesta</label>
+                <select name="tipo_richiesta" style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
+                    <option>Preventivo giardino Zen esterno</option>
+                    <option>Preventivo giardino Zen interno</option>
+                    <option>Consulenza di design</option>
+                    <option>Manutenzione premium</option>
+                    <option>Informazioni generali</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Messaggio *</label>
+                <textarea name="message" rows="5" required placeholder="Descrivi il tuo progetto o le tue esigenze..." style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" style="display:inline-block; padding: 1rem 2.5rem; background: var(--sage-green); color: var(--warm-white); text-decoration: none; font-size: 1rem; transition: all 0.3s ease; border: 2px solid var(--sage-green); cursor: pointer; font-family: 'Inter', sans-serif; width: 100%;">Invia richiesta</button>
+
+            <p id="formResult" style="margin-top: 1rem; text-align: center; font-size: 0.95rem;"></p>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2024 CI.EMME Giardini Zen. Giardini Zen nella regione dei laghi. | Privacy Policy | Terms</p>
+        <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Zen. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
     </footer>
 
     <!-- WhatsApp Button -->
@@ -490,7 +539,112 @@
         💬
     </a>
 
-    <script>
+        <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(26, 26, 26, 0.95); color: var(--warm-white); padding: 1.5rem 5%; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); z-index: 1001; display: none; max-height: 180px; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 2rem;">
+            <div style="font-size: 0.9rem; opacity: 0.9; flex: 1;">
+                Utilizziamo cookie e tecnologie di tracciamento per migliorare la vostra esperienza e analizzare il traffico del sito. Leggi la nostra <a href="privacy.html" style="color: var(--sage-light); text-decoration: underline;">Informativa Privacy</a> per maggiori dettagli.
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button id="cookieAccept" style="padding: 0.6rem 1.5rem; border: none; cursor: pointer; font-size: 0.9rem; background: var(--sage-green); color: var(--warm-white);">Accetta tutto</button>
+                <button id="cookieReject" style="padding: 0.6rem 1.5rem; border: 1px solid var(--warm-white); cursor: pointer; font-size: 0.9rem; background: transparent; color: var(--warm-white);">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .cookie-banner.show {
+            display: flex !important;
+        }
+    </style>
+
+<script>
+        // Aggiorna automaticamente l anno nel footer
+        const yearSpan = document.getElementById('currentYear');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+        // Cookie Banner
+        const cookieBanner = document.getElementById('cookieBanner');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieReject = document.getElementById('cookieReject');
+
+        if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+            cookieBanner.classList.add('show');
+        }
+
+        if (cookieAccept) {
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieBanner.classList.remove('show');
+                loadGoogleAnalytics();
+                loadGoogleSearchConsole();
+            });
+        }
+
+        if (cookieReject) {
+            cookieReject.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'rejected');
+                cookieBanner.classList.remove('show');
+            });
+        }
+
+        function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+        }
+
+        function loadGoogleSearchConsole() {
+            const meta = document.createElement('meta');
+            meta.name = 'google-site-verification';
+            meta.content = 'XXXXXXXXXXXXX';
+            document.head.appendChild(meta);
+        }
+
+
+        // Form preventivo
+        const quoteForm = document.getElementById('quoteForm');
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(quoteForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+                const resultEl = document.getElementById('formResult');
+                resultEl.style.color = 'var(--sage-green)';
+                resultEl.textContent = 'Invio in corso...';
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: json
+                })
+                .then(async (response) => {
+                    let jsonResponse = await response.json();
+                    if (response.status == 200) {
+                        resultEl.style.color = 'var(--sage-green)';
+                        resultEl.textContent = 'Richiesta inviata con successo! Ti risponderemo al più presto.';
+                        quoteForm.reset();
+                    } else {
+                        resultEl.style.color = '#c0392b';
+                        resultEl.textContent = jsonResponse.message || 'Errore nell\'invio. Riprova o scrivici via WhatsApp.';
+                    }
+                })
+                .catch(() => {
+                    resultEl.style.color = '#c0392b';
+                    resultEl.textContent = 'Errore di connessione. Riprova o scrivici via WhatsApp.';
+                });
+            });
+        }
+
+
         // Hamburger menu toggle
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const navMenu = document.getElementById('navMenu');

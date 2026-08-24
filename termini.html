@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articoli | CI.EMME Giardini Zen</title>
+    <title>Termini e Condizioni | CI.EMME Giardini Zen</title>
     <style>
         * {
             margin: 0;
@@ -38,13 +38,23 @@
             letter-spacing: 0.02em;
         }
 
-        h1 { font-size: 3.5rem; line-height: 1.1; }
-        h2 { font-size: 2.5rem; line-height: 1.2; }
-        h3 { font-size: 1.2rem; }
+        h1 { font-size: 3rem; line-height: 1.1; }
+        h2 { font-size: 1.7rem; line-height: 1.2; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--sage-dark); }
+        h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
 
-        p {
-            font-size: 1.05rem;
+        p, li {
+            font-size: 1rem;
             opacity: 0.85;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin: 0 0 1rem 1.5rem;
+        }
+
+        strong {
+            opacity: 1;
+            font-weight: 600;
         }
 
         /* Header */
@@ -164,15 +174,10 @@
         }
 
         /* Main Content */
-        section {
-            padding: 6rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .intro {
             background: linear-gradient(135deg, var(--warm-white) 0%, #f9f7f4 100%);
             text-align: center;
+            padding: 6rem 5% 3rem;
         }
 
         .intro h1 {
@@ -181,119 +186,40 @@
         }
 
         .intro p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
         }
 
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 5% 5rem;
         }
 
-        .article-card {
+        .legal-content .last-update {
+            font-size: 0.9rem;
+            color: var(--sage-green);
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-box {
             background: var(--warm-white);
-            border: 1px solid #ddd;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .article-image {
-            width: 100%;
-            height: 180px;
-            background: var(--light-gray);
-            overflow: hidden;
-        }
-
-        .article-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .article-content {
+            border-left: 3px solid var(--sage-green);
             padding: 1.5rem;
-        }
-
-        .article-date {
-            font-size: 0.85rem;
-            color: var(--sage-green);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .article-card h3 {
-            margin-bottom: 0.8rem;
-            color: var(--deep-black);
-            font-size: 1.1rem;
-        }
-
-        .article-intro {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            opacity: 0.8;
-            margin-bottom: 1rem;
-        }
-
-        .read-more {
-            color: var(--sage-green);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: opacity 0.3s ease;
-            display: inline-block;
-        }
-
-        .read-more:hover {
-            opacity: 0.7;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #f9f7f4 0%, var(--warm-white) 100%);
-            padding: 4rem 5%;
-            text-align: center;
-            border-top: 1px solid rgba(26, 26, 26, 0.1);
-        }
-
-        .cta-section h2 {
-            margin-bottom: 1rem;
-            color: var(--deep-black);
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--sage-green);
-            color: var(--warm-white);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid var(--sage-green);
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
+        .info-box p {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
         }
 
-        .cta-button:hover {
-            background: transparent;
-            color: var(--sage-green);
+        .info-box p:last-child {
+            margin-bottom: 0;
         }
 
         /* Footer */
@@ -464,15 +390,14 @@
                 border-bottom: 1px solid rgba(26, 26, 26, 0.05);
             }
 
-            h1 { font-size: 2.5rem; }
+            h1 { font-size: 2.2rem; }
 
-            section {
-                padding: 3rem 5%;
+            .intro {
+                padding: 3rem 5% 2rem;
             }
 
-            .articles-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 1.5rem;
+            .legal-content {
+                padding: 2rem 5% 3rem;
             }
 
             .footer-content {
@@ -491,7 +416,7 @@
             }
 
             .whatsapp-button {
-                bottom: 100px;
+                bottom: 20px;
                 right: 20px;
                 width: 50px;
                 height: 50px;
@@ -545,74 +470,69 @@
 
     <!-- Intro Section -->
     <section class="intro">
-        <h1>Articoli e Risorse</h1>
-        <p>Scopri consigli, guide e approfondimenti sul mondo dei giardini Zen.</p>
+        <h1>Termini e Condizioni</h1>
+        <p>Condizioni generali di utilizzo del sito web e dei servizi offerti da CI.EMME Giardini Zen.</p>
     </section>
 
-    <!-- Articles Grid -->
-    <section>
-        <div class="articles-grid" id="articlesGrid">
-            <!-- Gli articoli verranno caricati dinamicamente qui -->
+    <!-- Legal Content -->
+    <section class="legal-content">
+        <p class="last-update">Ultimo aggiornamento: Agosto 2026</p>
+
+        <div class="info-box">
+            <p><strong>Titolare del Sito:</strong> CI.EMME Giardini Zen</p>
+            <p><strong>Indirizzo:</strong> Viale Italia 3, 24060 Villongo (BG)</p>
+            <p><strong>Partita IVA:</strong> 03120250166</p>
+            <p><strong>Email:</strong> <a href="mailto:Claudio.manutenzioni@gmail.com" style="color: var(--sage-green);">Claudio.manutenzioni@gmail.com</a></p>
+            <p><strong>Telefono:</strong> +39 348 703 6996</p>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Pronti a trasformare il vostro spazio?</h2>
-        <p>Contattate CI.EMME Giardini Zen per una consulenza esclusiva e scoprite come creare il vostro giardino Zen personalizzato.</p>
-        <a href="index.html#contact" class="cta-button">Richiedi una consulenza →</a>
+        <h2>1. Accettazione dei Termini</h2>
+        <p>L'accesso e la navigazione sul sito web di CI.EMME Giardini Zen ("il Sito") implicano l'accettazione integrale dei presenti Termini e Condizioni. Qualora l'utente non concordasse con quanto stabilito, è invitato a non utilizzare il Sito.</p>
+
+        <h2>2. Oggetto del Sito</h2>
+        <p>Il Sito ha finalità informative e promozionali relative ai servizi offerti da CI.EMME Giardini Zen: progettazione e realizzazione di giardini Zen esterni e interni, consulenza di design, manutenzione premium, installazione di sculture ed elementi decorativi, e creazione di spazi meditativi. Il Sito non consente l'acquisto o la prenotazione online di servizi: ogni richiesta inviata tramite il modulo di contatto o i recapiti indicati costituisce una richiesta di informazioni o preventivo, non un ordine vincolante.</p>
+
+        <h2>3. Richieste di Preventivo e Contatto</h2>
+        <p>I moduli presenti sul Sito consentono di inviare richieste di informazioni o preventivo. L'invio del modulo non genera alcun obbligo contrattuale a carico di CI.EMME Giardini Zen, che si riserva di rispondere con una proposta commerciale personalizzata. Eventuali preventivi, tempistiche e condizioni economiche verranno definiti separatamente, per iscritto, tra le parti.</p>
+
+        <h2>4. Proprietà Intellettuale</h2>
+        <p>Tutti i contenuti presenti sul Sito — testi, immagini, fotografie dei progetti realizzati, loghi, grafiche ed elementi di design — sono di proprietà di CI.EMME Giardini Zen o concessi in licenza d'uso, e sono protetti dalla normativa vigente in materia di diritto d'autore e proprietà industriale. È vietata la riproduzione, distribuzione, modifica o utilizzo dei contenuti del Sito senza previa autorizzazione scritta del Titolare, salvo i casi consentiti dalla legge.</p>
+
+        <h2>5. Uso Consentito del Sito</h2>
+        <p>L'utente si impegna a utilizzare il Sito in modo lecito e conforme ai presenti Termini, astenendosi da:</p>
+        <ul>
+            <li>Compiere attività che possano danneggiare, sovraccaricare o compromettere il funzionamento del Sito;</li>
+            <li>Inserire contenuti falsi, offensivi, illeciti o lesivi di diritti di terzi nei moduli di contatto;</li>
+            <li>Utilizzare sistemi automatizzati per estrarre dati dal Sito (scraping) senza autorizzazione;</li>
+            <li>Tentare di accedere in modo non autorizzato a parti riservate del Sito o ai sistemi correlati.</li>
+        </ul>
+
+        <h2>6. Limitazione di Responsabilità</h2>
+        <p>CI.EMME Giardini Zen si impegna a mantenere aggiornati e corretti i contenuti del Sito, ma non garantisce l'assenza di errori, imprecisioni o interruzioni del servizio. Le immagini dei progetti realizzati hanno finalità illustrativa: il risultato finale di un progetto reale può variare in base a caratteristiche specifiche del luogo, materiali disponibili e accordi presi con il cliente. CI.EMME Giardini Zen non è responsabile per danni diretti o indiretti derivanti dall'impossibilità di accedere al Sito o da malfunzionamenti tecnici non imputabili a propria colpa.</p>
+
+        <h2>7. Link a Siti Terzi</h2>
+        <p>Il Sito può contenere collegamenti a servizi esterni (WhatsApp, Google Maps, social network). CI.EMME Giardini Zen non è responsabile dei contenuti, delle policy o delle pratiche di tali siti terzi, che sono regolati dai rispettivi termini e condizioni.</p>
+
+        <h2>8. Trattamento dei Dati Personali</h2>
+        <p>Il trattamento dei dati personali raccolti tramite il Sito è disciplinato dalla <a href="privacy.html" style="color: var(--sage-green);">Privacy Policy</a>, parte integrante dei presenti Termini e Condizioni.</p>
+
+        <h2>9. Modifiche ai Termini</h2>
+        <p>CI.EMME Giardini Zen si riserva il diritto di modificare in qualsiasi momento i presenti Termini e Condizioni, pubblicando la versione aggiornata su questa pagina con indicazione della data di ultimo aggiornamento. L'uso continuato del Sito successivo alla pubblicazione delle modifiche costituisce accettazione delle stesse.</p>
+
+        <h2>10. Legge Applicabile e Foro Competente</h2>
+        <p>I presenti Termini e Condizioni sono regolati dalla legge italiana. Per qualsiasi controversia relativa all'interpretazione, validità o esecuzione dei presenti Termini, sarà competente il Foro del luogo di residenza o domicilio del consumatore, ove applicabile, oppure il Foro di Bergamo per le altre ipotesi previste dalla legge.</p>
+
+        <h2>11. Contatti</h2>
+        <p>Per qualsiasi domanda relativa ai presenti Termini e Condizioni, è possibile contattare:</p>
+        <div class="info-box">
+            <p><strong>CI.EMME Giardini Zen</strong></p>
+            <p>Viale Italia 3, 24060 Villongo (BG)</p>
+            <p>Email: <a href="mailto:Claudio.manutenzioni@gmail.com" style="color: var(--sage-green);">Claudio.manutenzioni@gmail.com</a></p>
+            <p>Telefono: <a href="tel:+393487036996" style="color: var(--sage-green);">+39 348 703 6996</a></p>
+        </div>
     </section>
 
     <!-- Footer -->
-    <!-- Contact Form Section -->
-    <section style="background: linear-gradient(135deg, #f9f7f4 0%, var(--warm-white) 100%); padding: 4rem 5%; border-top: 1px solid rgba(26, 26, 26, 0.1);">
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <h2 style="margin-bottom: 1rem; color: var(--deep-black);">Richiedi un preventivo</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Raccontaci il tuo progetto: ti risponderemo con una consulenza personalizzata.</p>
-        </div>
-
-        <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;">
-            <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
-            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Zen">
-            <input type="checkbox" name="botcheck" style="display:none">
-
-            <div style="margin-bottom: 1.2rem;">
-                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Nome e Cognome *</label>
-                <input type="text" name="name" required style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
-            </div>
-
-            <div style="margin-bottom: 1.2rem;">
-                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Email *</label>
-                <input type="email" name="email" required style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
-            </div>
-
-            <div style="margin-bottom: 1.2rem;">
-                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Telefono</label>
-                <input type="tel" name="phone" style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
-            </div>
-
-            <div style="margin-bottom: 1.2rem;">
-                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Tipo di richiesta</label>
-                <select name="tipo_richiesta" style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
-                    <option>Preventivo giardino Zen esterno</option>
-                    <option>Preventivo giardino Zen interno</option>
-                    <option>Consulenza di design</option>
-                    <option>Manutenzione premium</option>
-                    <option>Informazioni generali</option>
-                </select>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Messaggio *</label>
-                <textarea name="message" rows="5" required placeholder="Descrivi il tuo progetto o le tue esigenze..." style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem; resize: vertical;"></textarea>
-            </div>
-
-            <button type="submit" style="display:inline-block; padding: 1rem 2.5rem; background: var(--sage-green); color: var(--warm-white); text-decoration: none; font-size: 1rem; transition: all 0.3s ease; border: 2px solid var(--sage-green); cursor: pointer; font-family: 'Inter', sans-serif; width: 100%;">Invia richiesta</button>
-
-            <p id="formResult" style="margin-top: 1rem; text-align: center; font-size: 0.95rem;"></p>
-        </form>
-    </section>
-
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -629,7 +549,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Zen. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
+            <p>&copy; <span id="currentYear">2026</span> CI.EMME Giardini Zen. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
         </div>
     </footer>
 
@@ -641,7 +561,7 @@
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-text">
-            Utilizziamo cookie e tecnologie di tracciamento per migliorare la vostra esperienza e analizzare il traffico del sito. Leggi la nostra <a href="#">Informativa Privacy</a> per maggiori dettagli.
+            Utilizziamo cookie e tecnologie di tracciamento per migliorare la vostra esperienza e analizzare il traffico del sito. Leggi la nostra <a href="privacy.html">Informativa Privacy</a> per maggiori dettagli.
         </div>
         <div class="cookie-buttons">
             <button class="cookie-btn cookie-accept" id="cookieAccept">Accetta tutto</button>
@@ -655,42 +575,6 @@
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
         }
-
-        // Form preventivo
-        const quoteForm = document.getElementById('quoteForm');
-        if (quoteForm) {
-            quoteForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(quoteForm);
-                const object = Object.fromEntries(formData);
-                const json = JSON.stringify(object);
-                const resultEl = document.getElementById('formResult');
-                resultEl.style.color = 'var(--sage-green)';
-                resultEl.textContent = 'Invio in corso...';
-
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: json
-                })
-                .then(async (response) => {
-                    let jsonResponse = await response.json();
-                    if (response.status == 200) {
-                        resultEl.style.color = 'var(--sage-green)';
-                        resultEl.textContent = 'Richiesta inviata con successo! Ti risponderemo al più presto.';
-                        quoteForm.reset();
-                    } else {
-                        resultEl.style.color = '#c0392b';
-                        resultEl.textContent = jsonResponse.message || 'Errore nell\'invio. Riprova o scrivici via WhatsApp.';
-                    }
-                })
-                .catch(() => {
-                    resultEl.style.color = '#c0392b';
-                    resultEl.textContent = 'Errore di connessione. Riprova o scrivici via WhatsApp.';
-                });
-            });
-        }
-
 
         // Hamburger Menu
         const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -713,39 +597,11 @@
             navMenu.classList.remove('active');
         });
 
-        // Articoli Dinamici - Carica fino a 20 articoli
-        const articlesGrid = document.getElementById('articlesGrid');
-        const maxArticles = 20;
-
-        for (let i = 1; i <= maxArticles; i++) {
-            const articleCard = document.createElement('a');
-            articleCard.href = `articolo${i}.html`;
-            articleCard.style.textDecoration = 'none';
-            articleCard.style.color = 'inherit';
-            
-            articleCard.innerHTML = `
-                <div class="article-card">
-                    <div class="article-image">
-                        <img src="articles/articolo${i}.jpg" alt="Articolo ${i}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22180%22%3E%3Crect fill=%22%23e8e6e2%22 width=%22250%22 height=%22180%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%237a9a7a%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EArticolo ${i}%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-date">Agosto 2024</div>
-                        <h3>Articolo ${i}</h3>
-                        <p class="article-intro">Scopri i nostri approfondimenti e consigli sul mondo dei giardini Zen e l'arte di trasformare gli spazi.</p>
-                        <span class="read-more">Scopri di più →</span>
-                    </div>
-                </div>
-            `;
-            
-            articlesGrid.appendChild(articleCard);
-        }
-
         // Cookie Banner
         const cookieBanner = document.getElementById('cookieBanner');
         const cookieAccept = document.getElementById('cookieAccept');
         const cookieReject = document.getElementById('cookieReject');
 
-        // Mostra banner se non hai accettato i cookie
         if (!localStorage.getItem('cookieConsent')) {
             cookieBanner.classList.add('show');
         }
@@ -753,7 +609,6 @@
         cookieAccept.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'accepted');
             cookieBanner.classList.remove('show');
-            // Carica Google Analytics
             loadGoogleAnalytics();
             loadGoogleSearchConsole();
         });
@@ -763,24 +618,22 @@
             cookieBanner.classList.remove('show');
         });
 
-        // Google Analytics
         function loadGoogleAnalytics() {
             const script = document.createElement('script');
             script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX'; // Sostituisci con il tuo ID
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
             document.head.appendChild(script);
 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX'); // Sostituisci con il tuo ID
+            gtag('config', 'G-XXXXXXXXXX');
         }
 
-        // Google Search Console (verifica)
         function loadGoogleSearchConsole() {
             const meta = document.createElement('meta');
             meta.name = 'google-site-verification';
-            meta.content = 'XXXXXXXXXXXXX'; // Sostituisci con il tuo verification token
+            meta.content = 'XXXXXXXXXXXXX';
             document.head.appendChild(meta);
         }
     </script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Nostro Metodo | CI.EMME Giardini Zen</title>
+    <title>Articolo 1 | CI.EMME Giardini Zen</title>
     <style>
         * {
             margin: 0;
@@ -29,7 +29,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--deep-black);
             background: var(--warm-white);
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         h1, h2, h3 {
@@ -38,13 +38,14 @@
             letter-spacing: 0.02em;
         }
 
-        h1 { font-size: 3.5rem; line-height: 1.1; }
-        h2 { font-size: 2.5rem; line-height: 1.2; }
-        h3 { font-size: 1.5rem; }
+        h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; }
+        h2 { font-size: 2rem; line-height: 1.2; }
+        h3 { font-size: 1.4rem; }
 
         p {
             font-size: 1.05rem;
             opacity: 0.85;
+            margin-bottom: 1.5rem;
         }
 
         /* Header */
@@ -164,65 +165,108 @@
         }
 
         /* Main Content */
-        section {
-            padding: 6rem 5%;
-            max-width: 1200px;
+        article {
+            padding: 4rem 5%;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .intro {
-            background: linear-gradient(135deg, var(--warm-white) 0%, #f9f7f4 100%);
-            text-align: center;
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: var(--light-gray);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            border-radius: 4px;
         }
 
-        .intro h1 {
-            margin-bottom: 1rem;
-            color: var(--deep-black);
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .intro p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .step {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 80px;
-            height: 80px;
-            border: 2px solid var(--sage-green);
-            border-radius: 50%;
+        .article-meta {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: var(--sage-green);
-            margin-bottom: 1.5rem;
-        }
-
-        .step h3 {
-            color: var(--deep-black);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .step p {
+            gap: 2rem;
+            margin-bottom: 2rem;
             font-size: 0.95rem;
-            line-height: 1.8;
+            opacity: 0.7;
+        }
+
+        .article-date {
+            color: var(--sage-green);
+            font-weight: 500;
+        }
+
+        article h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-intro {
+            font-size: 1.2rem;
+            color: var(--sage-green);
+            font-style: italic;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        article p {
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--sage-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #f9f7f4 0%, var(--warm-white) 100%);
+            padding: 4rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+            color: var(--deep-black);
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--sage-green);
+            color: var(--warm-white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--sage-green);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--sage-green);
         }
 
         /* Footer */
@@ -233,7 +277,32 @@
             padding: 2rem 5%;
             font-size: 0.9rem;
             opacity: 0.8;
-            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--sage-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
         }
 
         .whatsapp-button {
@@ -256,7 +325,74 @@
 
         .whatsapp-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            color: var(--warm-white);
+            padding: 1.5rem 5%;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            display: none;
+            max-height: 180px;
+            overflow-y: auto;
+        }
+
+        .cookie-banner.show {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .cookie-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            flex: 1;
+        }
+
+        .cookie-text a {
+            color: var(--sage-light);
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .cookie-accept {
+            background: var(--sage-green);
+            color: var(--warm-white);
+        }
+
+        .cookie-accept:hover {
+            background: var(--sage-dark);
+        }
+
+        .cookie-reject {
+            background: transparent;
+            color: var(--warm-white);
+            border: 1px solid var(--warm-white);
+        }
+
+        .cookie-reject:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         @media (max-width: 768px) {
@@ -295,29 +431,25 @@
                 opacity: 1;
             }
 
-            nav a {
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+            h1 { font-size: 2rem; }
+
+            article {
+                padding: 2rem 5%;
             }
 
-            h1 { font-size: 2.5rem; }
-
-            section {
-                padding: 3rem 5%;
+            .article-image {
+                height: 250px;
+                margin-bottom: 2rem;
             }
 
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .step-number {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
+            .cookie-banner.show {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
             }
 
             .whatsapp-button {
-                bottom: 20px;
+                bottom: 100px;
                 right: 20px;
                 width: 50px;
                 height: 50px;
@@ -369,36 +501,79 @@
         </nav>
     </header>
 
-    <!-- Intro Section -->
-    <section class="intro">
-        <h1>Il Nostro Metodo</h1>
-        <p>Scopri il processo che seguiamo per trasformare la tua visione in realtà.</p>
-    </section>
-
-    <!-- Process Section -->
-    <section>
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-number">01</div>
-                <h3>Visione</h3>
-                <p>Ascoltiamo attentamente i tuoi desideri, studiamo lo spazio e le tue necessità. Ogni progetto inizia con una consulenza esclusiva per comprendere la tua visione personale e creare un concept unico che rispecchia la tua personalità.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">02</div>
-                <h3>Design</h3>
-                <p>Sviluppiamo il progetto con rendering 3D dettagliati e proposte di materiali premium. Vi mostriamo esattamente come apparirà il vostro giardino Zen prima di iniziare i lavori, permettendovi di apportare modifiche e perfezionamenti.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">03</div>
-                <h3>Esecuzione</h3>
-                <p>Realizzazione meticolosa di ogni elemento secondo gli standard più alti di qualità. Il nostro team di esperti lavora con dedizione, utilizzando solo materiali premium e tecniche costruttive eccellenti per garantire un risultato perfetto.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">04</div>
-                <h3>Armonia</h3>
-                <p>Consegna finale e inizio del rapporto di cura e manutenzione continua. Non è la fine, ma l'inizio: vi forniamo assistenza costante per mantenere il vostro giardino in perfette condizioni nel tempo.</p>
-            </div>
+    <!-- Article Content -->
+    <article>
+        <a href="articoli.html" class="back-link">← Torna agli articoli</a>
+        
+        <div class="article-image">
+            <img src="articles/articolo1.jpg" alt="Titolo Articolo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22%3E%3Crect fill=%22%23e8e6e2%22 width=%22800%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%237a9a7a%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EArticolo 1%3C/text%3E%3C/svg%3E'">
         </div>
+
+        <div class="article-meta">
+            <span class="article-date">20 Agosto 2024</span>
+            <span>Tempo di lettura: 5 min</span>
+        </div>
+
+        <h1>Come creare un giardino Zen: principi fondamentali</h1>
+        
+        <p class="article-intro">Scopri i principi essenziali della filosofia Zen applicati al design dei giardini moderni.</p>
+
+        <p>
+            Il giardino Zen è un'espressione artistica profonda della cultura giapponese, che rappresenta l'armonia tra la natura e lo spazio umano. 
+            Creare un giardino Zen non significa semplicemente disporre rocce e piante, ma piuttosto creare uno spazio di meditazione e contemplazione.
+        </p>
+
+        <h2>I Principi Fondamentali</h2>
+
+        <p>
+            Il primo principio è l'equilibrio. In un giardino Zen, ogni elemento ha il suo ruolo e il suo posizionamento deve seguire una logica armoniosa. 
+            Le rocce rappresentano le montagne, l'acqua rappresenta i fiumi, e gli spazi vuoti rappresentano il cielo e l'infinito.
+        </p>
+
+        <p>
+            Il minimalismo è un altro elemento chiave. Un giardino Zen non è affollato di elementi; al contrario, ogni cosa è scelta con cura e presenta uno scopo specifico. 
+            L'assenza di elementi inutili crea spazio mentale per la contemplazione.
+        </p>
+
+        <h2>Elementi Essenziali</h2>
+
+        <p>
+            Le rocce sono il cuore di un giardino Zen. Devono essere selezionate con attenzione per la loro forma e textura, e posizionate in modo da creare un senso di stabilità e forza. 
+            Spesso vengono raggruppate in numeri dispari (3, 5, 7) per creare composizioni più interessanti.
+        </p>
+
+        <p>
+            L'acqua, sia statica che in movimento, introduce un elemento di vitalità. Le fontane o i piccoli corsi d'acqua possono aggiungere dimensione sonora e visiva al giardino. 
+            L'acqua simboleggia anche il flusso della vita e la purificazione.
+        </p>
+
+        <p>
+            La vegetazione deve essere scelta con cura. I bonsai, le piante a foglia verde e alcuni arbusti selezionati possono completare lo spazio senza sovraffollarlo. 
+            La potatura regolare mantiene l'armonia e la forma desiderata.
+        </p>
+
+        <h2>Creare lo Spazio Perfetto</h2>
+
+        <p>
+            Iniziate visitando il vostro spazio e osservandolo attentamente. Considerate l'illuminazione naturale, il drenaggio dell'acqua e la visibilità dal vostro punto di vista preferito. 
+            Ogni giardino Zen dovrebbe avere un punto di vista principale da cui ammirare l'opera d'arte.
+        </p>
+
+        <p>
+            Disegnate il layout su carta prima di iniziare. Questo vi aiuterà a visualizzare come gli elementi interagiranno e se il design crea l'armonia desiderata. 
+            Non abbiate paura di apportare modifiche mentre lavorate; l'arte Zen abbraccia il cambiamento e l'evoluzione.
+        </p>
+
+        <p>
+            Con questi principi come guida, potrete creare un giardino Zen che non solo è bellissimo visivamente, ma che offre anche uno spazio sereno per la meditazione e il rinnovamento personale.
+        </p>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Pronti a trasformare il vostro spazio?</h2>
+        <p>Contattate CI.EMME Giardini Zen per una consulenza esclusiva e scoprite come creare il vostro giardino Zen personalizzato.</p>
+        <a href="index.html#contact" class="cta-button">Richiedi una consulenza →</a>
     </section>
 
     <!-- Footer -->
@@ -452,7 +627,23 @@
     </section>
 
     <footer>
-        <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Zen. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CI.EMME Giardini Zen</h4>
+                <p>Specialisti nella creazione di giardini Zen.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contatti</h4>
+                <p>Tel: +39 348 703 6996<br>Email: Claudio.manutenzioni@gmail.com<br>Viale Italia 3, 24060 Villongo (BG)</p>
+            </div>
+            <div class="footer-section">
+                <h4>Partita IVA</h4>
+                <p>03120250166</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Zen. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
+        </div>
     </footer>
 
     <!-- WhatsApp Button -->
@@ -460,75 +651,23 @@
         💬
     </a>
 
-        <!-- Cookie Banner -->
-    <div class="cookie-banner" id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(26, 26, 26, 0.95); color: var(--warm-white); padding: 1.5rem 5%; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); z-index: 1001; display: none; max-height: 180px; overflow-y: auto;">
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 2rem;">
-            <div style="font-size: 0.9rem; opacity: 0.9; flex: 1;">
-                Utilizziamo cookie e tecnologie di tracciamento per migliorare la vostra esperienza e analizzare il traffico del sito. Leggi la nostra <a href="privacy.html" style="color: var(--sage-light); text-decoration: underline;">Informativa Privacy</a> per maggiori dettagli.
-            </div>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <button id="cookieAccept" style="padding: 0.6rem 1.5rem; border: none; cursor: pointer; font-size: 0.9rem; background: var(--sage-green); color: var(--warm-white);">Accetta tutto</button>
-                <button id="cookieReject" style="padding: 0.6rem 1.5rem; border: 1px solid var(--warm-white); cursor: pointer; font-size: 0.9rem; background: transparent; color: var(--warm-white);">Rifiuta</button>
-            </div>
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-text">
+            Utilizziamo cookie e tecnologie di tracciamento per migliorare la vostra esperienza e analizzare il traffico del sito. Leggi la nostra <a href="#">Informativa Privacy</a> per maggiori dettagli.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" id="cookieAccept">Accetta tutto</button>
+            <button class="cookie-btn cookie-reject" id="cookieReject">Rifiuta</button>
         </div>
     </div>
 
-    <style>
-        .cookie-banner.show {
-            display: flex !important;
-        }
-    </style>
-
-<script>
+    <script>
         // Aggiorna automaticamente l anno nel footer
         const yearSpan = document.getElementById('currentYear');
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
         }
-        // Cookie Banner
-        const cookieBanner = document.getElementById('cookieBanner');
-        const cookieAccept = document.getElementById('cookieAccept');
-        const cookieReject = document.getElementById('cookieReject');
-
-        if (cookieBanner && !localStorage.getItem('cookieConsent')) {
-            cookieBanner.classList.add('show');
-        }
-
-        if (cookieAccept) {
-            cookieAccept.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                cookieBanner.classList.remove('show');
-                loadGoogleAnalytics();
-                loadGoogleSearchConsole();
-            });
-        }
-
-        if (cookieReject) {
-            cookieReject.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'rejected');
-                cookieBanner.classList.remove('show');
-            });
-        }
-
-        function loadGoogleAnalytics() {
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-            document.head.appendChild(script);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-        }
-
-        function loadGoogleSearchConsole() {
-            const meta = document.createElement('meta');
-            meta.name = 'google-site-verification';
-            meta.content = 'XXXXXXXXXXXXX';
-            document.head.appendChild(meta);
-        }
-
 
         // Form preventivo
         const quoteForm = document.getElementById('quoteForm');
@@ -566,6 +705,7 @@
         }
 
 
+        // Hamburger Menu
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const navMenu = document.getElementById('navMenu');
 
@@ -585,6 +725,47 @@
             hamburgerBtn.classList.remove('active');
             navMenu.classList.remove('active');
         });
+
+        // Cookie Banner
+        const cookieBanner = document.getElementById('cookieBanner');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieReject = document.getElementById('cookieReject');
+
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieBanner.classList.add('show');
+        }
+
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.remove('show');
+            // Carica Google Analytics
+            loadGoogleAnalytics();
+            loadGoogleSearchConsole();
+        });
+
+        cookieReject.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'rejected');
+            cookieBanner.classList.remove('show');
+        });
+
+        function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+        }
+
+        function loadGoogleSearchConsole() {
+            const meta = document.createElement('meta');
+            meta.name = 'google-site-verification';
+            meta.content = 'XXXXXXXXXXXXX';
+            document.head.appendChild(meta);
+        }
     </script>
 </body>
 </html>
