@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Nostro Metodo | CI.EMME Giardini Zen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-black: #1a1a1a;
+            --sage-green: #7a9a7a;
+            --sage-light: #a8c8a8;
+            --sage-dark: #5a7a5a;
+            --champagne: #c9a961;
+            --warm-white: #f5f3f0;
+            --light-gray: #e8e6e2;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--deep-black);
+            background: var(--warm-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        h1 { font-size: 3.5rem; line-height: 1.1; }
+        h2 { font-size: 2.5rem; line-height: 1.2; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+        }
+
+        /* Header */
+        header {
+            background: var(--warm-white);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--deep-black);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: baseline;
+            gap: 0.15em;
+        }
+
+        .logo-emme {
+            color: var(--sage-green);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        nav {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--deep-black);
+            font-size: 0.95rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--sage-green);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-header {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--sage-green);
+            color: var(--sage-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-header:hover {
+            background: var(--sage-green);
+            color: var(--warm-white);
+        }
+
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .hamburger-menu span {
+            width: 25px;
+            height: 2px;
+            background: var(--deep-black);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Main Content */
+        section {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, var(--warm-white) 0%, #f9f7f4 100%);
+            text-align: center;
+        }
+
+        .intro h1 {
+            margin-bottom: 1rem;
+            color: var(--deep-black);
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--sage-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .step h3 {
+            color: var(--deep-black);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            color: var(--warm-white);
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 3rem;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 998;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .hamburger-menu {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--warm-white);
+                padding: 0;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow-y: hidden;
+                visibility: hidden;
+                opacity: 0;
+                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+                z-index: 999;
+            }
+
+            nav.active {
+                max-height: 90vh;
+                overflow-y: auto;
+                padding: 1.5rem 1.5rem 3rem 1.5rem;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            nav a {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+            }
+
+            h1 { font-size: 2.5rem; }
+
+            section {
+                padding: 3rem 5%;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="8" width="8" height="44" rx="4" fill="#7a9a7a"/>
+                <line x1="12" y1="16" x2="20" y2="16" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="12" y1="26" x2="20" y2="26" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="12" y1="36" x2="20" y2="36" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="12" y1="46" x2="20" y2="46" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <rect x="26" y="5" width="8" height="47" rx="4" fill="#8bb88b"/>
+                <line x1="26" y1="14" x2="34" y2="14" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="26" y1="24" x2="34" y2="24" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="26" y1="34" x2="34" y2="34" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="26" y1="44" x2="34" y2="44" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <rect x="40" y="10" width="8" height="42" rx="4" fill="#7a9a7a"/>
+                <line x1="40" y1="18" x2="48" y2="18" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="40" y1="28" x2="48" y2="28" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="40" y1="38" x2="48" y2="38" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="40" y1="48" x2="48" y2="48" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <path d="M 16 6 Q 12 2 10 0" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <path d="M 30 3 Q 28 -1 26 -2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <path d="M 44 8 Q 42 4 40 2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
+            </svg>
+            <span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Zen</span>
+        </div>
+        <button class="hamburger-menu" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="chi-siamo.html">Chi siamo</a>
+            <a href="servizi.html">Servizi</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="metodo.html">Il nostro metodo</a>
+            <a href="articoli.html">Articoli</a>
+            <a href="faq.html">FAQ</a>
+            <a href="index.html#contact" class="cta-header">Contattaci</a>
+        </nav>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="intro">
+        <h1>Il Nostro Metodo</h1>
+        <p>Scopri il processo che seguiamo per trasformare la tua visione in realtà.</p>
+    </section>
+
+    <!-- Process Section -->
+    <section>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Visione</h3>
+                <p>Ascoltiamo attentamente i tuoi desideri, studiamo lo spazio e le tue necessità. Ogni progetto inizia con una consulenza esclusiva per comprendere la tua visione personale e creare un concept unico che rispecchia la tua personalità.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>Design</h3>
+                <p>Sviluppiamo il progetto con rendering 3D dettagliati e proposte di materiali premium. Vi mostriamo esattamente come apparirà il vostro giardino Zen prima di iniziare i lavori, permettendovi di apportare modifiche e perfezionamenti.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Esecuzione</h3>
+                <p>Realizzazione meticolosa di ogni elemento secondo gli standard più alti di qualità. Il nostro team di esperti lavora con dedizione, utilizzando solo materiali premium e tecniche costruttive eccellenti per garantire un risultato perfetto.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Armonia</h3>
+                <p>Consegna finale e inizio del rapporto di cura e manutenzione continua. Non è la fine, ma l'inizio: vi forniamo assistenza costante per mantenere il vostro giardino in perfette condizioni nel tempo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CI.EMME Giardini Zen. Giardini Zen nella regione dei laghi. | Privacy Policy | Terms</p>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Zen" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
+        💬
+    </a>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            hamburgerBtn.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

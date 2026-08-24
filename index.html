@@ -587,6 +587,45 @@
             }
         }
 
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 100;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-button:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+        }
+
         .fade-in {
             animation: fadeInUp 0.8s ease-out;
         }
@@ -645,10 +684,12 @@
             <span></span>
         </button>
         <nav id="navMenu">
-            <a href="#about">Chi siamo</a>
-            <a href="#services">Servizi</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#process">Il nostro metodo</a>
+            <a href="chi-siamo.html">Chi siamo</a>
+            <a href="servizi.html">Servizi</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="metodo.html">Il nostro metodo</a>
+            <a href="articoli.html">Articoli</a>
+            <a href="faq.html">FAQ</a>
             <a href="#contact" class="cta-header">Contattaci</a>
         </nav>
     </header>
@@ -657,7 +698,7 @@
     <section class="hero">
         <div class="hero-content fade-in">
             <h1>Armonia in ogni spazio</h1>
-            <p class="hero-subtitle">Giardini Zen di lusso per case e spazi privati esclusivi</p>
+            <p class="hero-subtitle">Giardini Zen per case e spazi privati esclusivi</p>
             <p class="hero-description">Trasformiamo i tuoi spazi esterni e interni in oasi di serenità, dove ogni elemento racconta una storia di eleganza e equilibrio</p>
             <a href="#contact" class="cta-button">Scopri il nostro lavoro</a>
         </div>
@@ -668,8 +709,8 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div>
-            <h2>Chi siamo</h2>
-            <p>Fondato in Lombardia nella splendida zona dei laghi, CI.EMME Giardini rappresenta un nuovo standard nel design e creazione di <span class="about-highlight">giardini Zen di lusso</span>.</p>
+            <h2><a href="chi-siamo.html" style="color: inherit; text-decoration: none; cursor: pointer;">Chi Siamo</a></h2>
+            <p>Fondato in Lombardia nella splendida zona dei laghi, CI.EMME Giardini rappresenta un nuovo standard nel design e creazione di <span class="about-highlight">giardini Zen</span>.</p>
             <p>Con anni di esperienza nel settore e una profonda comprensione della filosofia Zen, creiamo spazi che non sono semplicemente giardini, ma <span class="about-highlight">rifugi privati</span> dove il tempo scorre diversamente.</p>
             <p>Ogni progetto è un'opera unica, pensata specificamente per riflettere la personalità e lo stile di vita dei nostri clienti più esigenti.</p>
         </div>
@@ -680,7 +721,7 @@
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <h2>I nostri servizi</h2>
+        <h2><a href="servizi.html" style="color: inherit; text-decoration: none; cursor: pointer;">I nostri servizi</a></h2>
         <div class="services-grid">
             <div class="service-card">
                 <h3>Giardini Zen Esterni</h3>
@@ -692,7 +733,7 @@
             </div>
             <div class="service-card">
                 <h3>Consulenza di Design</h3>
-                <p>Dal concept alla realizzazione, lavoriamo con architetti e designer per integrare la filosofia Zen negli spazi di lusso privati e comuni.</p>
+                <p>Dal concept alla realizzazione, lavoriamo con architetti e designer per integrare la filosofia Zen negli spazi privati e comuni.</p>
             </div>
             <div class="service-card">
                 <h3>Maintenance Premium</h3>
@@ -713,7 +754,7 @@
 
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
-        <h2>Progetti realizzati</h2>
+        <h2><a href="portfolio.html" style="color: inherit; text-decoration: none; cursor: pointer;">Progetti realizzati</a></h2>
         <div class="portfolio-grid">
             <div class="portfolio-item" style="background-image: url('images/portfolio-1.jpg'); background-size: cover; background-position: center;">
                 <div class="portfolio-item-overlay">
@@ -758,7 +799,7 @@
 
     <!-- Process Section -->
     <section class="process" id="process">
-        <h2>Il nostro metodo</h2>
+        <h2><a href="metodo.html" style="color: inherit; text-decoration: none; cursor: pointer;">Il nostro metodo</a></h2>
         <div class="process-steps">
             <div class="step">
                 <div class="step-number">01</div>
@@ -797,7 +838,7 @@
             </div>
             <div class="contact-method">
                 <h4>Email</h4>
-                <p><a href="mailto:info@ciemmegiardini.it">info@ciemmegiardini.it</a></p>
+                <p><a href="mailto:Claudio.manutenzioni@gmail.com">Claudio.manutenzioni@gmail.com</a></p>
             </div>
             <div class="contact-method">
                 <h4>Uffici</h4>
@@ -805,13 +846,18 @@
             </div>
         </div>
 
-        <a href="mailto:info@ciemmegiardini.it" class="cta-button" style="margin-top: 2rem;">Richiedi una consulenza</a>
+        <a href="mailto:Claudio.manutenzioni@gmail.com" class="cta-button" style="margin-top: 2rem;">Richiedi una consulenza</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 CI.EMME Giardini Zen. Giardini Zen di lusso nella regione dei laghi. | Privacy Policy | Terms</p>
+        <p>&copy; 2024 CI.EMME Giardini Zen. Giardini Zen nella regione dei laghi. | Privacy Policy | Terms</p>
     </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Zen" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
+        💬
+    </a>
 
     <script>
         // Smooth scroll for navigation

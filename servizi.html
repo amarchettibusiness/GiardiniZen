@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizi | CI.EMME Giardini Zen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-black: #1a1a1a;
+            --sage-green: #7a9a7a;
+            --sage-light: #a8c8a8;
+            --sage-dark: #5a7a5a;
+            --champagne: #c9a961;
+            --warm-white: #f5f3f0;
+            --light-gray: #e8e6e2;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--deep-black);
+            background: var(--warm-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        h1 { font-size: 3.5rem; line-height: 1.1; }
+        h2 { font-size: 2.5rem; line-height: 1.2; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            max-width: 65ch;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--warm-white);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--deep-black);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: baseline;
+            gap: 0.15em;
+        }
+
+        .logo-emme {
+            color: var(--sage-green);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        nav {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--deep-black);
+            font-size: 0.95rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .cta-header {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--sage-green);
+            color: var(--sage-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-header:hover {
+            background: var(--sage-green);
+            color: var(--warm-white);
+        }
+
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .hamburger-menu span {
+            width: 25px;
+            height: 2px;
+            background: var(--deep-black);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Main Content */
+        section {
+            padding: 6rem 5%;
+            position: relative;
+        }
+
+        .section-divider {
+            width: 2px;
+            height: 4rem;
+            background: var(--sage-green);
+            margin: 3rem auto;
+            opacity: 0.5;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--warm-white) 0%, #f0ede8 100%);
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 5%;
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            color: var(--deep-black);
+            font-size: 3rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--sage-green);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--warm-white);
+            padding: 2.5rem;
+            border-left: 3px solid var(--sage-green);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: var(--sage-green);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-top: 0;
+        }
+
+        .service-card p {
+            font-size: 0.98rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-details {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .service-details h4 {
+            color: var(--deep-black);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .service-details ul {
+            list-style: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .service-details li {
+            padding: 0.3rem 0 0.3rem 1.5rem;
+            position: relative;
+        }
+
+        .service-details li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--sage-green);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            color: var(--warm-white);
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 100;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 0;
+            }
+
+            .logo {
+                gap: 0.5rem;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .hamburger-menu {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--warm-white);
+                padding: 0;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow-y: hidden;
+                visibility: hidden;
+                opacity: 0;
+                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+                z-index: 999;
+                border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+            }
+
+            nav.active {
+                max-height: 90vh;
+                overflow-y: auto;
+                padding: 1.5rem 1.5rem 3rem 1.5rem;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            nav a {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+                margin-top: 0.5rem;
+                padding: 1rem 0;
+            }
+
+            .cta-header {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                padding: 0.75rem 1.5rem;
+            }
+
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="8" width="8" height="44" rx="4" fill="#7a9a7a"/>
+                <line x1="12" y1="16" x2="20" y2="16" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="12" y1="26" x2="20" y2="26" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="12" y1="36" x2="20" y2="36" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="12" y1="46" x2="20" y2="46" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <rect x="26" y="5" width="8" height="47" rx="4" fill="#8bb88b"/>
+                <line x1="26" y1="14" x2="34" y2="14" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="26" y1="24" x2="34" y2="24" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="26" y1="34" x2="34" y2="34" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="26" y1="44" x2="34" y2="44" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <rect x="40" y="10" width="8" height="42" rx="4" fill="#7a9a7a"/>
+                <line x1="40" y1="18" x2="48" y2="18" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="40" y1="28" x2="48" y2="28" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="40" y1="38" x2="48" y2="38" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <line x1="40" y1="48" x2="48" y2="48" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
+                <path d="M 16 6 Q 12 2 10 0" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <path d="M 30 3 Q 28 -1 26 -2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <path d="M 44 8 Q 42 4 40 2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
+            </svg>
+            <span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Zen</span>
+        </div>
+        <button class="hamburger-menu" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="chi-siamo.html">Chi siamo</a>
+            <a href="servizi.html">Servizi</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="metodo.html">Il nostro metodo</a>
+            <a href="faq.html" class="cta-header">Contattaci</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>I nostri servizi</h1>
+            <p class="hero-subtitle">Soluzioni complete per giardini Zen</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Services Section -->
+    <section>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Giardini Zen Esterni</h3>
+                <p>Trasformazione completa di spazi esterni in paesaggi meditiativi. Progettazione e realizzazione di giardini Zen con rocce, ghiaia, piante selezionate e elementi acquatici.</p>
+                <div class="service-details">
+                    <h4>Incluso:</h4>
+                    <ul>
+                        <li>Consulenza progettuale personalizzata</li>
+                        <li>Preparazione del terreno e drenaggi</li>
+                        <li>Posizionamento rocce e pietre</li>
+                        <li>Impianti d'irrigazione specializzati</li>
+                        <li>Piantumazione piante Zen autentiche</li>
+                        <li>Finiture e dettagli decorativi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Giardini Zen Interni</h3>
+                <p>Creazione di piccoli universi di armonia dentro casa. Giardini verticali, bonsai collection e elementi acquatici per vivere la tranquillità quotidiana negli spazi abitativi.</p>
+                <div class="service-details">
+                    <h4>Incluso:</h4>
+                    <ul>
+                        <li>Valutazione spazi interni</li>
+                        <li>Design personalizzato</li>
+                        <li>Sistemi di illuminazione armonica</li>
+                        <li>Impianti d'irrigazione automatici</li>
+                        <li>Manutenzione delle piante</li>
+                        <li>Consulenza sulla collocazione</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Consulenza di Design</h3>
+                <p>Integrazione della filosofia Zen negli spazi di qualsiasi dimensione. Lavoriamo con architetti e designer per progetti coordinati e armoniosi.</p>
+                <div class="service-details">
+                    <h4>Incluso:</h4>
+                    <ul>
+                        <li>Analisi dello spazio disponibile</li>
+                        <li>Proposte concettuali multiple</li>
+                        <li>Rendering 3D personalizzati</li>
+                        <li>Coordinamento con altri professionisti</li>
+                        <li>Gestione progetto completa</li>
+                        <li>Supervisione esecuzione</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Maintenance Premium</h3>
+                <p>Cura continua e conservazione dei tuoi giardini nel tempo, mantenendo l'equilibrio estetico e la salubrità biologica. Servizi personalizzati su abbonamento.</p>
+                <div class="service-details">
+                    <h4>Incluso:</h4>
+                    <ul>
+                        <li>Potatura e manutenzione piante</li>
+                        <li>Pulizia e rirrangiamento rocce</li>
+                        <li>Controllo sistemi idrici</li>
+                        <li>Rimozione muschi e alghe</li>
+                        <li>Controllo parassiti naturale</li>
+                        <li>Visite programmate</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Sculture e Elementi</h3>
+                <p>Selezione e installazione di lanterne in pietra, fontane in stile Zen, ponti tradizionali e elementi decorativi autentici di eccellenza.</p>
+                <div class="service-details">
+                    <h4>Incluso:</h4>
+                    <ul>
+                        <li>Consulenza su scelta elementi</li>
+                        <li>Acquisizione elementi autentici</li>
+                        <li>Importazione da fornitori specializzati</li>
+                        <li>Installazione professionale</li>
+                        <li>Preparazione fondamenti</li>
+                        <li>Garanzia qualità</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Spazi Meditiativi</h3>
+                <p>Creazione di ambienti dedicati alla pratica meditativa, con pavimentazioni speciali, illuminazione armonica, acustiche studiate e comfort massimale.</p>
+                <div class="service-details">
+                    <h4>Incluso:</h4>
+                    <ul>
+                        <li>Studio acustico dello spazio</li>
+                        <li>Design dell'illuminazione</li>
+                        <li>Pavimentazioni naturali</li>
+                        <li>Elementi per privacy visiva</li>
+                        <li>Comfort climatico</li>
+                        <li>Arredi specializzati</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CI.EMME Giardini Zen. Giardini Zen nella regione dei laghi. | Privacy Policy | Terms</p>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Zen" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
+        💬
+    </a>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Chiudi menu quando clicchi su un link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Chiudi menu quando scrolli
+        window.addEventListener('scroll', () => {
+            hamburgerBtn.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
