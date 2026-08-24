@@ -715,30 +715,52 @@
 
         // Articoli Dinamici - Carica fino a 20 articoli
         const articlesGrid = document.getElementById('articlesGrid');
-        const maxArticles = 20;
 
-        for (let i = 1; i <= maxArticles; i++) {
+        const articoliData = [
+            { num: 1, titolo: "Come creare un giardino Zen: principi fondamentali", intro: "Scopri i principi essenziali della filosofia Zen applicati al design dei giardini moderni.", data: "21 Agosto 2026" },
+            { num: 2, titolo: "Manutenzione estiva dei giardini: consigli pratici", intro: "Come prendersi cura del proprio giardino Zen durante i mesi più caldi dell'anno.", data: "9 Agosto 2026" },
+            { num: 3, titolo: "Elementi Zen: rocce e pietre nel design moderno", intro: "L'arte di selezionare e posizionare rocce e pietre per creare composizioni armoniose.", data: "28 Luglio 2026" },
+            { num: 4, titolo: "Giardini verticali: trasformare spazi limitati", intro: "Come creare un affascinante giardino Zen verticale anche quando lo spazio è ridotto.", data: "16 Luglio 2026" },
+            { num: 5, titolo: "Acqua e Zen: fontane, laghetti e il suono della serenità", intro: "Il ruolo dell'acqua nella filosofia Zen e come integrarla nel proprio giardino.", data: "4 Luglio 2026" },
+            { num: 6, titolo: "Il Feng Shui e lo Zen: differenze e punti in comune", intro: "Due filosofie orientali spesso confuse: scopriamo cosa le accomuna e cosa le distingue nel design del giardino.", data: "22 Giugno 2026" },
+            { num: 7, titolo: "Bonsai: l'arte della cura e della pazienza", intro: "Guida introduttiva alla coltivazione dei bonsai, elemento iconico di ogni giardino Zen.", data: "10 Giugno 2026" },
+            { num: 8, titolo: "Il rastrellamento della ghiaia: pattern e significato", intro: "Uno degli elementi più riconoscibili del karesansui, il giardino secco giapponese.", data: "29 Maggio 2026" },
+            { num: 9, titolo: "Ponti e passerelle nel giardino Zen", intro: "Come questi elementi architettonici guidano il percorso fisico ed emotivo nel giardino.", data: "17 Maggio 2026" },
+            { num: 10, titolo: "Lanterne in pietra: storia e funzione", intro: "Il ruolo estetico e simbolico delle lanterne (toro) nei giardini giapponesi.", data: "5 Maggio 2026" },
+            { num: 11, titolo: "Illuminazione notturna per giardini Zen", intro: "Come progettare un'illuminazione che rispetti l'atmosfera serena dello spazio anche di notte.", data: "23 Aprile 2026" },
+            { num: 12, titolo: "Giardini Zen per uffici e spazi corporate", intro: "Perché sempre più aziende scelgono di integrare spazi Zen nei propri ambienti di lavoro.", data: "11 Aprile 2026" },
+            { num: 13, titolo: "Quanto costa un giardino Zen: guida al budget", intro: "Una panoramica sui fattori che influenzano il costo di realizzazione di un giardino Zen su misura.", data: "30 Marzo 2026" },
+            { num: 14, titolo: "Materiali sostenibili per il tuo giardino Zen", intro: "Come progettare un giardino Zen rispettoso dell'ambiente senza rinunciare all'eleganza.", data: "18 Marzo 2026" },
+            { num: 15, titolo: "Cura del giardino Zen in inverno", intro: "Consigli pratici per proteggere piante ed elementi del giardino durante la stagione fredda.", data: "6 Marzo 2026" },
+            { num: 16, titolo: "Come scegliere le piante giuste per un giardino Zen", intro: "Una guida alle specie vegetali più adatte per creare equilibrio e armonia nel proprio spazio.", data: "22 Febbraio 2026" },
+            { num: 17, titolo: "Trasformare un giardino tradizionale in giardino Zen", intro: "Come procedere passo dopo passo per convertire uno spazio verde esistente in un'oasi Zen.", data: "10 Febbraio 2026" },
+            { num: 18, titolo: "Il muschio: bellezza silenziosa nel giardino Zen", intro: "Un elemento spesso sottovalutato ma fondamentale per l'atmosfera dei giardini giapponesi.", data: "29 Gennaio 2026" },
+            { num: 19, titolo: "Spazi meditativi in casa: creare un angolo di pace", intro: "Come ricavare un piccolo spazio dedicato alla meditazione anche in un appartamento.", data: "17 Gennaio 2026" },
+            { num: 20, titolo: "Zen e sostenibilità: un binomio naturale", intro: "Perché la filosofia Zen è, per sua natura, già orientata verso un approccio sostenibile al giardino.", data: "5 Gennaio 2026" }
+        ];
+
+        articoliData.forEach(art => {
             const articleCard = document.createElement('a');
-            articleCard.href = `articolo${i}.html`;
+            articleCard.href = `articolo${art.num}.html`;
             articleCard.style.textDecoration = 'none';
             articleCard.style.color = 'inherit';
-            
+
             articleCard.innerHTML = `
                 <div class="article-card">
                     <div class="article-image">
-                        <img src="articles/articolo${i}.jpg" alt="Articolo ${i}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22180%22%3E%3Crect fill=%22%23e8e6e2%22 width=%22250%22 height=%22180%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%237a9a7a%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EArticolo ${i}%3C/text%3E%3C/svg%3E'">
+                        <img src="articles/articolo${art.num}.jpg" alt="${art.titolo}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22180%22%3E%3Crect fill=%22%23e8e6e2%22 width=%22250%22 height=%22180%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%237a9a7a%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EArticolo ${art.num}%3C/text%3E%3C/svg%3E'">
                     </div>
                     <div class="article-content">
-                        <div class="article-date">Agosto 2024</div>
-                        <h3>Articolo ${i}</h3>
-                        <p class="article-intro">Scopri i nostri approfondimenti e consigli sul mondo dei giardini Zen e l'arte di trasformare gli spazi.</p>
+                        <div class="article-date">${art.data}</div>
+                        <h3>${art.titolo}</h3>
+                        <p class="article-intro">${art.intro}</p>
                         <span class="read-more">Scopri di più →</span>
                     </div>
                 </div>
             `;
-            
+
             articlesGrid.appendChild(articleCard);
-        }
+        });
 
         // Cookie Banner
         const cookieBanner = document.getElementById('cookieBanner');
