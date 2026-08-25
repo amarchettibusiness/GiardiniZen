@@ -1,0 +1,22 @@
+======================================
+CI.EMME GIARDINI ZEN - Archivio Sito
+======================================
+
+CONTENUTO:
+- 30 file HTML: tutte le pagine del sito, aggiornate e con
+  form di richiesta preventivo (Web3Forms) gia' collegato e funzionante
+- cartella images/: dove mettere le foto di homepage e portfolio
+- cartella articles/: dove mettere le foto dei 20 articoli del blog
+
+COME USARLO:
+1. Estrai questo archivio
+2. Carica TUTTO il contenuto (file HTML + cartelle images e articles)
+   nella root del tuo repository GitHub (quello collegato al dominio)
+3. Aggiungi le tue foto reali nelle cartelle images/ e articles/
+   seguendo i nomi indicati nei file DOVE-METTERE-LE-FOTO.txt
+4. Il form di contatto e' gia' configurato e funzionante su tutte
+   le pagine (Access Key Web3Forms gia' inserita)
+
+NOTA: la pagina "articolo1-TEMPLATE.html" e' un modello di riserva,
+utile solo se in futuro vuoi creare un articolo numero 21 in poi.
+Puoi anche non caricarla, non e' collegata a nessun menu del sito.
