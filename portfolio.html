@@ -223,21 +223,19 @@
 
         .portfolio-item-illustrative {
             position: absolute;
-            inset: 0;
-            background: rgba(122, 154, 122, 0.55);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1rem;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(26, 26, 26, 0.75);
+            padding: 0.4rem 0.9rem;
+            border-radius: 3px;
         }
 
         .portfolio-item-illustrative span {
             color: var(--warm-white);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            letter-spacing: 0.05em;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.03em;
+            font-weight: 500;
         }
 
         /* Footer */
@@ -450,7 +448,7 @@
                 portfolioItem.style.backgroundSize = 'cover';
                 portfolioItem.style.backgroundPosition = 'center';
                 if (photoNum <= 6) {
-                    portfolioItem.innerHTML = `<div class="portfolio-item-illustrative"><span>Progetti illustrativi</span></div>`;
+                    portfolioItem.innerHTML = `<div class="portfolio-item-illustrative"><span>Progetto illustrativo</span></div>`;
                 }
             };
             img.onerror = function () {
