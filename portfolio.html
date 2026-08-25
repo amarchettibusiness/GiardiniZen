@@ -207,34 +207,18 @@
             transform: scale(1.02);
         }
 
-        .portfolio-item-overlay {
+        .portfolio-item-placeholder {
             position: absolute;
             inset: 0;
-            background: rgba(122, 154, 122, 0.88);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .portfolio-item:hover .portfolio-item-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-item-overlay h3 {
-            color: var(--warm-white);
-            margin-bottom: 0.5rem;
+            justify-content: center;
+            background: var(--light-gray);
+            color: var(--sage-dark);
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.3rem;
-        }
-
-        .portfolio-item-overlay p {
-            color: var(--warm-white);
-            font-size: 0.9rem;
-            opacity: 0.95;
+            letter-spacing: 0.08em;
+            opacity: 0.7;
         }
 
         /* Footer */
@@ -431,58 +415,29 @@
         }
 
 
-        // Carica portfolio dinamicamente fino a 30 foto
+        // Carica portfolio dinamicamente: fino a 30 foto
+        // Per ogni riquadro, se la foto non esiste ancora, mostra "In arrivo"
         const portfolioGrid = document.getElementById('portfolioGrid');
-        const portfolioItems = [
-            { title: 'Villa Lago Como', desc: 'Giardino Zen esterno privato con vasca koi e aree meditative' },
-            { title: 'Attico Milano', desc: 'Giardino verticale interno con acque fluenti' },
-            { title: 'Residence Lugano', desc: 'Spazio meditativo privato con bonsai collection' },
-            { title: 'Giardino Privato Bergamo', desc: 'Integrazione Zen in villa storica' },
-            { title: 'Terrazza Lago d\'Iseo', desc: 'Giardino Zen minimale con rocce e acque' },
-            { title: 'Penthouse Brianteo', desc: 'Oasi urbana Zen per meditazione quotidiana' },
-            { title: 'Cascina Provincia Como', desc: 'Giardino Zen con elementi tradizionali' },
-            { title: 'Villa Lago Garda', desc: 'Progetto esclusivo con fontane e sculture' },
-            { title: 'Terrazza Centrale Milano', desc: 'Spazio Zen in contesto urbano' },
-            { title: 'Villa Privata Brescia', desc: 'Giardino meditativo con ponti e acque' },
-            { title: 'Attico Piacenza', desc: 'Giardino verticale Zen premium' },
-            { title: 'Residence Mantova', desc: 'Progetto di integrazione con la natura' },
-            { title: 'Villa Lago d\'Endine', desc: 'Giardino Zen con vista sul lago' },
-            { title: 'Terrazza Cremona', desc: 'Spazio sereno per meditazione quotidiana' },
-            { title: 'Villa Lecco', desc: 'Giardino Zen esterno di lusso' },
-            { title: 'Penthouse Varese', desc: 'Oasi privata nel cuore della città' },
-            { title: 'Cascina Lodi', desc: 'Progetto Zen tradizionale' },
-            { title: 'Villa Monza', desc: 'Giardino con rocce e bonsai' },
-            { title: 'Terrazza Como', desc: 'Spazio meditativo con vista panoramica' },
-            { title: 'Villa Privata Bergamo', desc: 'Giardino Zen di lusso con fontane' },
-            { title: 'Attico Brescia', desc: 'Giardino verticale interno ed esterno' },
-            { title: 'Residence Pavia', desc: 'Progetto Zen eco-sostenibile' },
-            { title: 'Villa Orzinuovi', desc: 'Giardino meditativo con elementi tradizionali' },
-            { title: 'Terrazza Milano Duomo', desc: 'Oasi Zen nel centro di Milano' },
-            { title: 'Villa Seriate', desc: 'Giardino privato con vasca e cascata' },
-            { title: 'Penthouse Monza', desc: 'Spazio Zen urbano premium' },
-            { title: 'Cascina Treviglio', desc: 'Giardino Zen con rocce antiche' },
-            { title: 'Villa Como Waterfront', desc: 'Progetto esclusivo vista lago' },
-            { title: 'Attico Lecco', desc: 'Giardino meditativo con bonsai collection' },
-            { title: 'Villa Finale Ligure', desc: 'Giardino Zen con vista mare' }
-        ];
+        const totalSlots = 30;
 
-        portfolioItems.forEach((item, index) => {
-            const photoNum = index + 1;
+        for (let i = 1; i <= totalSlots; i++) {
+            const photoNum = i;
             const portfolioItem = document.createElement('div');
             portfolioItem.className = 'portfolio-item';
-            portfolioItem.style.backgroundImage = `url('images/portfolio-${photoNum}.jpg')`;
-            portfolioItem.style.backgroundSize = 'cover';
-            portfolioItem.style.backgroundPosition = 'center';
-            
-            portfolioItem.innerHTML = `
-                <div class="portfolio-item-overlay">
-                    <h3>${item.title}</h3>
-                    <p>${item.desc}</p>
-                </div>
-            `;
-            
+
+            const img = new Image();
+            img.onload = function () {
+                portfolioItem.style.backgroundImage = `url('images/portfolio-${photoNum}.jpg')`;
+                portfolioItem.style.backgroundSize = 'cover';
+                portfolioItem.style.backgroundPosition = 'center';
+            };
+            img.onerror = function () {
+                portfolioItem.innerHTML = `<div class="portfolio-item-placeholder">In arrivo</div>`;
+            };
+            img.src = `images/portfolio-${photoNum}.jpg`;
+
             portfolioGrid.appendChild(portfolioItem);
-        });
+        }
     </script>
 
     <!-- CTA Section -->
