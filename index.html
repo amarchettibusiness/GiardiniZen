@@ -357,33 +357,18 @@
             transform: scale(1.02);
         }
 
-        .portfolio-item-overlay {
+        .portfolio-item-placeholder {
             position: absolute;
             inset: 0;
-            background: rgba(122, 154, 122, 0.88);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .portfolio-item:hover .portfolio-item-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-item-overlay h3 {
-            color: var(--warm-white);
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-item-overlay p {
-            color: var(--warm-white);
-            font-size: 0.9rem;
-            opacity: 0.95;
+            justify-content: center;
+            background: var(--light-gray);
+            color: var(--sage-dark);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.08em;
+            opacity: 0.7;
         }
 
         /* Process Section */
@@ -763,44 +748,7 @@
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <h2><a href="portfolio.html" style="color: inherit; text-decoration: none; cursor: pointer;">Progetti realizzati</a></h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item" style="background-image: url('images/portfolio-1.jpg'); background-size: cover; background-position: center;">
-                <div class="portfolio-item-overlay">
-                    <h3>Villa Lago Como</h3>
-                    <p>Giardino Zen esterno privato con vasca koi e aree meditative</p>
-                </div>
-            </div>
-            <div class="portfolio-item" style="background-image: url('images/portfolio-2.jpg'); background-size: cover; background-position: center;">
-                <div class="portfolio-item-overlay">
-                    <h3>Attico Milano</h3>
-                    <p>Giardino verticale interno con acque fluenti</p>
-                </div>
-            </div>
-            <div class="portfolio-item" style="background-image: url('images/portfolio-3.jpg'); background-size: cover; background-position: center;">
-                <div class="portfolio-item-overlay">
-                    <h3>Residence Lugano</h3>
-                    <p>Spazio meditativo privato con bonsai collection</p>
-                </div>
-            </div>
-            <div class="portfolio-item" style="background-image: url('images/portfolio-4.jpg'); background-size: cover; background-position: center;">
-                <div class="portfolio-item-overlay">
-                    <h3>Giardino Privato Bergamo</h3>
-                    <p>Integrazione Zen in villa storica</p>
-                </div>
-            </div>
-            <div class="portfolio-item" style="background-image: url('images/portfolio-5.jpg'); background-size: cover; background-position: center;">
-                <div class="portfolio-item-overlay">
-                    <h3>Terrazza Lago d'Iseo</h3>
-                    <p>Giardino Zen minimale con rocce e acque</p>
-                </div>
-            </div>
-            <div class="portfolio-item" style="background-image: url('images/portfolio-6.jpg'); background-size: cover; background-position: center;">
-                <div class="portfolio-item-overlay">
-                    <h3>Penthouse Brianteo</h3>
-                    <p>Oasi urbana Zen per meditazione quotidiana</p>
-                </div>
-            </div>
-        </div>
+        <div class="portfolio-grid" id="homePortfolioGrid"></div>
         <div style="text-align: center;">
             <a href="portfolio.html" class="cta-button" style="display: inline-block; margin-top: 3rem;">Scopri di più →</a>
         </div>
@@ -1059,6 +1007,29 @@
         const yearSpan = document.getElementById('currentYear');
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Portfolio in homepage: prime 6 foto, "In arrivo" se mancanti
+        const homePortfolioGrid = document.getElementById('homePortfolioGrid');
+        if (homePortfolioGrid) {
+            for (let i = 1; i <= 6; i++) {
+                const photoNum = i;
+                const portfolioItem = document.createElement('div');
+                portfolioItem.className = 'portfolio-item';
+
+                const img = new Image();
+                img.onload = function () {
+                    portfolioItem.style.backgroundImage = `url('images/portfolio-${photoNum}.jpg')`;
+                    portfolioItem.style.backgroundSize = 'cover';
+                    portfolioItem.style.backgroundPosition = 'center';
+                };
+                img.onerror = function () {
+                    portfolioItem.innerHTML = `<div class="portfolio-item-placeholder">In arrivo</div>`;
+                };
+                img.src = `images/portfolio-${photoNum}.jpg`;
+
+                homePortfolioGrid.appendChild(portfolioItem);
+            }
         }
 
         // Ultimi 3 articoli del blog (i più recenti in cima all'array articoli.html)
