@@ -221,6 +221,25 @@
             opacity: 0.7;
         }
 
+        .portfolio-item-illustrative {
+            position: absolute;
+            inset: 0;
+            background: rgba(122, 154, 122, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .portfolio-item-illustrative span {
+            color: var(--warm-white);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
         /* Footer */
         footer {
             background: #0f0f0f;
@@ -430,6 +449,9 @@
                 portfolioItem.style.backgroundImage = `url('images/portfolio-${photoNum}.jpg')`;
                 portfolioItem.style.backgroundSize = 'cover';
                 portfolioItem.style.backgroundPosition = 'center';
+                if (photoNum <= 6) {
+                    portfolioItem.innerHTML = `<div class="portfolio-item-illustrative"><span>Progetti illustrativi</span></div>`;
+                }
             };
             img.onerror = function () {
                 portfolioItem.innerHTML = `<div class="portfolio-item-placeholder">In arrivo</div>`;
@@ -505,7 +527,7 @@
             </div>
             <div>
                 <h4 style="color: var(--sage-light); margin-bottom: 1rem; font-size: 0.95rem;">Contatti</h4>
-                <p style="font-size: 0.85rem; opacity: 0.8;">Tel: +39 348 703 6996<br>Email: Claudio.manutenzioni@gmail.com<br>Viale Italia 3, 24060 Villongo (BG)</p>
+                <p style="font-size: 0.85rem; opacity: 0.8;">Tel: +39 348 703 6996<br>Email: info@ciemmegiardini.it<br>Viale Italia 3, 24060 Villongo (BG)</p>
             </div>
             <div>
                 <h4 style="color: var(--sage-light); margin-bottom: 1rem; font-size: 0.95rem;">Partita IVA</h4>
