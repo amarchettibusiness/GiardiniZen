@@ -1,12 +1,33 @@
 ======================================
 CI.EMME GIARDINI ZEN - Archivio Sito
 ======================================
+Versione aggiornata al 29/08/2026
 
 CONTENUTO:
-- 30 file HTML: tutte le pagine del sito, aggiornate e con
-  form di richiesta preventivo (Web3Forms) gia' collegato e funzionante
+- 30 file HTML: tutte le pagine del sito
 - cartella images/: dove mettere le foto di homepage e portfolio
 - cartella articles/: dove mettere le foto dei 20 articoli del blog
+
+NOVITA' IN QUESTA VERSIONE:
+- Email aggiornata: info@ciemmegiardini.it
+- Testi "chi siamo/servizi/metodo/faq" riscritti: focus su 20 anni di
+  esperienza diretta, specializzazione in progettazione del verde e
+  manutenzione, niente piu' riferimenti ad architetti/render 3D esterni
+- Aggiunta menzione "giardini tradizionali" oltre ai giardini Zen
+- Portfolio dinamico: foto mancanti mostrano "In arrivo"; i primi 6
+  slot, se compilati, mostrano l'etichetta "Progetto illustrativo"
+  (sempre visibile, non solo al passaggio del mouse)
+- Divisori verticali trasformati in piccola composizione di canne di bambu'
+- Sezione "Il nostro metodo": numeri step ora centrati correttamente
+  col testo; sfondo con foto coerente tra homepage e pagina dedicata;
+  griglia dei 4 step forzata su una sola riga da desktop
+- Checkbox di consenso privacy obbligatoria aggiunta a TUTTI i form
+  di richiesta preventivo (28 pagine), con link alla Privacy Policy
+- Partita IVA (03120250166) ora visibile nel footer di TUTTE le pagine
+- Titolo pagina (tag <title>) corretto: rimosso "di Lusso"
+- Social collegati nella homepage: Instagram, Facebook e TikTok reali
+  (Google Business ancora da collegare quando disponibile)
+- Form di contatto gia' funzionante con Web3Forms (access key inclusa)
 
 COME USARLO:
 1. Estrai questo archivio
@@ -14,8 +35,13 @@ COME USARLO:
    nella root del tuo repository GitHub (quello collegato al dominio)
 3. Aggiungi le tue foto reali nelle cartelle images/ e articles/
    seguendo i nomi indicati nei file DOVE-METTERE-LE-FOTO.txt
-4. Il form di contatto e' gia' configurato e funzionante su tutte
-   le pagine (Access Key Web3Forms gia' inserita)
+4. Fai commit/push: GitHub Pages aggiorna il sito live in pochi minuti
+
+DA FARE QUANDO DISPONIBILE:
+- Link alla scheda Google Business (attualmente placeholder nel footer
+  della homepage, cerca "TUA_PAGINA_GOOGLE_BUSINESS")
+- ID Google Analytics e Google Search Console (attualmente placeholder
+  "G-XXXXXXXXXX" nel cookie banner di ogni pagina)
 
 NOTA: la pagina "articolo1-TEMPLATE.html" e' un modello di riserva,
 utile solo se in futuro vuoi creare un articolo numero 21 in poi.
