@@ -83,12 +83,19 @@
             flex-direction: row;
             align-items: center;
             gap: 0.75rem;
+            position: relative;
+            min-width: 320px;
         }
 
         .logo-full-img {
-            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 170px;
             width: auto;
-            display: block;
+            z-index: 5;
+            pointer-events: none;
         }
 
         .logo-icon {
@@ -125,6 +132,7 @@
 
         .logo .jp-label {
             margin-top: 0.15rem;
+            margin-left: 300px;
             font-size: 0.9rem;
         }
 
@@ -574,10 +582,16 @@
 
             .logo {
                 gap: 0.5rem;
+                min-width: 190px;
             }
 
             .logo-full-img {
-                height: 64px;
+                height: 90px;
+            }
+
+            .logo .jp-label {
+                margin-left: 165px;
+                font-size: 0.75rem;
             }
 
             .hamburger-menu {
