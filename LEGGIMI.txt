@@ -3,14 +3,23 @@ CI.EMME GIARDINI GIAPPONESI - Archivio Sito
 ======================================
 Versione aggiornata al 07/09/2026
 
-NOVITA' IN QUESTA VERSIONE:
-- La scritta "EMME" nel logo (barra in alto) e' ora rossa terracotta
-  (#a3453c) invece che verde, in linea con il colore del torii e
-  delle etichette giapponesi, su tutte le 30 pagine
-- Logo cambiato: torii giapponese stilizzato al posto delle canne
-  di bambu', stesso colore terracotta
-- Divisori tra sezioni testuali IT/JP con vocabolario Zen autentico
+NOVITA' PRINCIPALE DI QUESTA VERSIONE:
+- NUOVO LOGO su tutte le 30 pagine: albero stilizzato con torii rosso,
+  fiume azzurro, testo "Ci EMME" verde e "GIARDINI GIAPPONESI" verde,
+  su sfondo trasparente (file images/logo.png, GIA' INCLUSO in questo
+  archivio dentro la cartella images/)
+- Il logo e' posizionato in modo che possa essere grande senza
+  ingrandire l'altezza della barra di navigazione in alto (si sovrappone
+  leggermente al contenuto sottostante, effetto voluto)
+  - Altezza desktop: 115px
+  - Altezza mobile: 90px
+- Rimossa l'etichetta giapponese accanto al logo nell'header (restano
+  invece le etichette giapponesi sotto i titoli nel resto delle pagine)
+
+STORICO NOVITA' PRECEDENTI:
 - REBRANDING COMPLETO: "Giardini Zen" -> "Giardini Giapponesi"
+- Colore rosso uniforme (#a3453c) per accenti giapponesi nel sito
+- Divisori tra sezioni testuali IT/JP con vocabolario Zen autentico
 - Email aggiornata: info@ciemmegiardini.it
 - Testi riscritti: focus su 20 anni di esperienza diretta
 - Portfolio dinamico: "In arrivo" / "Progetto illustrativo"
@@ -21,9 +30,11 @@ NOVITA' IN QUESTA VERSIONE:
 
 COME USARLO:
 1. Estrai questo archivio
-2. Carica tutto il contenuto (file HTML + cartelle images e articles)
+2. Carica TUTTO il contenuto (file HTML + cartelle images e articles)
    nella root del repository GitHub collegato al dominio
-3. Aggiungi le foto reali nelle cartelle images/ e articles/
+   ATTENZIONE: la cartella images/ contiene gia' il nuovo logo.png,
+   non sovrascriverlo con una versione vecchia se ne avevi una tua
+3. Aggiungi le tue foto reali (primapagina, chisiamo, portfolio, articoli)
 4. Fai commit/push: GitHub Pages aggiorna il sito in pochi minuti
 
 DA FARE QUANDO DISPONIBILE:
