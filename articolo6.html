@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Feng Shui e lo Zen: differenze e punti in comune | CI.EMME Giardini Zen</title>
+    <title>Il Feng Shui e lo Zen: differenze e punti in comune | CI.EMME Giardini Giapponesi</title>
     <style>
         * {
             margin: 0;
@@ -84,9 +84,34 @@
         }
 
         .logo-emme {
-            color: var(--sage-green);
+            color: #a3453c;
             font-weight: 500;
             letter-spacing: 0.03em;
+        }
+
+        .jp-label {
+            color: #a3453c;
+            font-size: 1.4rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .logo-text-wrap {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .logo .jp-label {
+            margin-top: 0.15rem;
+            font-size: 0.9rem;
+        }
+
+        h1 .jp-label, h2 .jp-label {
+            display: block;
+            margin-top: 0.6rem;
+            font-family: "Inter", sans-serif;
         }
 
         nav {
@@ -463,26 +488,14 @@
     <header>
         <div class="logo">
             <svg class="logo-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                <rect x="12" y="8" width="8" height="44" rx="4" fill="#7a9a7a"/>
-                <line x1="12" y1="16" x2="20" y2="16" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="12" y1="26" x2="20" y2="26" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="12" y1="36" x2="20" y2="36" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="12" y1="46" x2="20" y2="46" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <rect x="26" y="5" width="8" height="47" rx="4" fill="#8bb88b"/>
-                <line x1="26" y1="14" x2="34" y2="14" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="26" y1="24" x2="34" y2="24" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="26" y1="34" x2="34" y2="34" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="26" y1="44" x2="34" y2="44" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <rect x="40" y="10" width="8" height="42" rx="4" fill="#7a9a7a"/>
-                <line x1="40" y1="18" x2="48" y2="18" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="40" y1="28" x2="48" y2="28" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="40" y1="38" x2="48" y2="38" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <line x1="40" y1="48" x2="48" y2="48" stroke="#5a7a5a" stroke-width="1.5" opacity="0.7"/>
-                <path d="M 16 6 Q 12 2 10 0" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
-                <path d="M 30 3 Q 28 -1 26 -2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
-                <path d="M 44 8 Q 42 4 40 2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <!-- Torii giapponese stilizzato -->
+                <path d="M3,15 Q6,9 12,10 L48,10 Q54,9 57,15 L52,18 Q49,14 45,15 L15,15 Q11,14 8,18 Z" fill="#a3453c"/>
+                <rect x="9" y="22" width="42" height="4" rx="1" fill="#a3453c"/>
+                <rect x="13" y="15" width="5.5" height="41" rx="1" fill="#a3453c"/>
+                <rect x="41.5" y="15" width="5.5" height="41" rx="1" fill="#a3453c"/>
+                <rect x="27.5" y="10" width="5" height="12" fill="#a3453c"/>
             </svg>
-            <span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Zen</span>
+            <div class="logo-text-wrap"><span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Giapponesi</span><span class="jp-label">日本庭園</span></div>
         </div>
         <button class="hamburger-menu" id="hamburgerBtn">
             <span></span>
@@ -528,13 +541,13 @@
 
         <p>
             Il Feng Shui, di origine cinese, si concentra sulla circolazione dell'energia (chi) all'interno di uno spazio, con l'obiettivo
-            di attirare prosperità, salute e armonia nella vita di chi lo abita. Il giardino Zen, di matrice giapponese e buddista,
+            di attirare prosperità, salute e armonia nella vita di chi lo abita. Il giardino giapponese, di matrice giapponese e buddista,
             punta invece alla contemplazione, alla meditazione e alla riduzione degli stimoli superflui.
         </p>
 
         <p>
             Mentre il Feng Shui lavora molto sul posizionamento in base a punti cardinali ed elementi (acqua, legno, fuoco, terra, metallo),
-            il giardino Zen si concentra sulla composizione visiva, sul vuoto come elemento attivo e sulla ripetizione di forme naturali.
+            il giardino giapponese si concentra sulla composizione visiva, sul vuoto come elemento attivo e sulla ripetizione di forme naturali.
         </p>
 
         <h2>Punti in Comune</h2>
@@ -557,7 +570,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Pronti a trasformare il vostro spazio?</h2>
-        <p>Contattate CI.EMME Giardini Zen per una consulenza esclusiva e scoprite come creare il vostro giardino Zen personalizzato.</p>
+        <p>Contattate CI.EMME Giardini Giapponesi per una consulenza esclusiva e scoprite come creare il vostro giardino giapponese personalizzato.</p>
         <a href="index.html#contact" class="cta-button">Richiedi una consulenza →</a>
     </section>
 
@@ -571,7 +584,7 @@
 
         <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;">
             <input type="hidden" name="access_key" value="7b9ddbe1-8e87-46e0-8d83-3dd3e7a3b9d8">
-            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Zen">
+            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Giapponesi">
             <input type="checkbox" name="botcheck" style="display:none">
 
             <div style="margin-bottom: 1.2rem;">
@@ -592,8 +605,8 @@
             <div style="margin-bottom: 1.2rem;">
                 <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Tipo di richiesta</label>
                 <select name="tipo_richiesta" style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
-                    <option>Preventivo giardino Zen esterno</option>
-                    <option>Preventivo giardino Zen interno</option>
+                    <option>Preventivo giardino giapponese esterno</option>
+                    <option>Preventivo giardino giapponese interno</option>
                     <option>Consulenza di design</option>
                     <option>Manutenzione premium</option>
                     <option>Informazioni generali</option>
@@ -618,8 +631,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>CI.EMME Giardini Zen</h4>
-                <p>Specialisti nella creazione di giardini Zen.</p>
+                <h4>CI.EMME Giardini Giapponesi</h4>
+                <p>Specialisti nella creazione di giardini giapponesi.</p>
             </div>
             <div class="footer-section">
                 <h4>Contatti</h4>
@@ -631,12 +644,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Zen. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
+            <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Giapponesi. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Zen" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
+    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Giapponesi" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
         💬
     </a>
 
