@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servizi | CI.EMME Giardini Zen</title>
+    <title>Servizi | CI.EMME Giardini Giapponesi</title>
     <style>
         * {
             margin: 0;
@@ -89,6 +89,31 @@
             color: var(--sage-green);
             font-weight: 500;
             letter-spacing: 0.03em;
+        }
+
+        .jp-label {
+            color: #e5002b;
+            font-size: 1.4rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .logo-text-wrap {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .logo .jp-label {
+            margin-top: 0.15rem;
+            font-size: 0.9rem;
+        }
+
+        h1 .jp-label, h2 .jp-label {
+            display: block;
+            margin-top: 0.6rem;
+            font-family: "Inter", sans-serif;
         }
 
         nav {
@@ -415,7 +440,7 @@
                 <path d="M 30 3 Q 28 -1 26 -2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
                 <path d="M 44 8 Q 42 4 40 2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
             </svg>
-            <span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Zen</span>
+            <div class="logo-text-wrap"><span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Giapponesi</span><span class="jp-label">日本庭園</span></div>
         </div>
         <button class="hamburger-menu" id="hamburgerBtn">
             <span></span>
@@ -435,8 +460,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>I nostri servizi</h1>
-            <p class="hero-subtitle">Soluzioni complete per giardini Zen e giardini tradizionali</p>
+            <h1>I nostri servizi <span class="jp-label">サービス</span></h1>
+            <p class="hero-subtitle">Soluzioni complete per giardini giapponesi e giardini tradizionali</p>
         </div>
     </section>
 
@@ -446,8 +471,8 @@
     <section>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Giardini Zen Esterni</h3>
-                <p>Trasformazione completa di spazi esterni in paesaggi meditiativi. Progettazione e realizzazione di giardini Zen con rocce, ghiaia, piante selezionate e elementi acquatici.</p>
+                <h3>Giardini Giapponesi Esterni</h3>
+                <p>Trasformazione completa di spazi esterni in paesaggi meditiativi. Progettazione e realizzazione di giardini giapponesi con rocce, ghiaia, piante selezionate e elementi acquatici.</p>
                 <div class="service-details">
                     <h4>Incluso:</h4>
                     <ul>
@@ -462,7 +487,7 @@
             </div>
 
             <div class="service-card">
-                <h3>Giardini Zen Interni</h3>
+                <h3>Giardini Giapponesi Interni</h3>
                 <p>Creazione di piccoli universi di armonia dentro casa. Giardini verticali, bonsai collection e elementi acquatici per vivere la tranquillità quotidiana negli spazi abitativi.</p>
                 <div class="service-details">
                     <h4>Incluso:</h4>
@@ -479,13 +504,13 @@
 
             <div class="service-card">
                 <h3>Progettazione del Verde</h3>
-                <p>Progettazione e realizzazione del verde a 360 gradi: non solo giardini Zen, ma anche giardini tradizionali, dalla prima idea alla posa finale. Ogni progetto nasce dalla nostra esperienza diretta, maturata in oltre 20 anni di lavoro sul campo.</p>
+                <p>Progettazione e realizzazione del verde a 360 gradi: non solo giardini giapponesi, ma anche giardini tradizionali, dalla prima idea alla posa finale. Ogni progetto nasce dalla nostra esperienza diretta, maturata in oltre 20 anni di lavoro sul campo.</p>
                 <div class="service-details">
                     <h4>Incluso:</h4>
                     <ul>
                         <li>Sopralluogo e analisi dello spazio</li>
                         <li>Proposte progettuali su misura</li>
-                        <li>Progettazione giardini Zen e tradizionali</li>
+                        <li>Progettazione giardini giapponesi e tradizionali</li>
                         <li>Scelta di piante, materiali e finiture</li>
                         <li>Gestione completa del cantiere</li>
                         <li>Supervisione diretta dell'esecuzione</li>
@@ -555,7 +580,7 @@
 
         <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;">
             <input type="hidden" name="access_key" value="7b9ddbe1-8e87-46e0-8d83-3dd3e7a3b9d8">
-            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Zen">
+            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Giapponesi">
             <input type="checkbox" name="botcheck" style="display:none">
 
             <div style="margin-bottom: 1.2rem;">
@@ -576,8 +601,8 @@
             <div style="margin-bottom: 1.2rem;">
                 <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Tipo di richiesta</label>
                 <select name="tipo_richiesta" style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
-                    <option>Preventivo giardino Zen esterno</option>
-                    <option>Preventivo giardino Zen interno</option>
+                    <option>Preventivo giardino giapponese esterno</option>
+                    <option>Preventivo giardino giapponese interno</option>
                     <option>Consulenza di design</option>
                     <option>Manutenzione premium</option>
                     <option>Informazioni generali</option>
@@ -600,11 +625,11 @@
     </section>
 
     <footer>
-        <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Zen. | P.IVA 03120250166 | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
+        <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Giapponesi. | P.IVA 03120250166 | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Zen" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
+    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Giapponesi" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
         💬
     </a>
 

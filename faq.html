@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | CI.EMME Giardini Zen</title>
+    <title>FAQ | CI.EMME Giardini Giapponesi</title>
     <style>
         * {
             margin: 0;
@@ -86,6 +86,31 @@
             color: var(--sage-green);
             font-weight: 500;
             letter-spacing: 0.03em;
+        }
+
+        .jp-label {
+            color: #e5002b;
+            font-size: 1.4rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .logo-text-wrap {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .logo .jp-label {
+            margin-top: 0.15rem;
+            font-size: 0.9rem;
+        }
+
+        h1 .jp-label, h2 .jp-label {
+            display: block;
+            margin-top: 0.6rem;
+            font-family: "Inter", sans-serif;
         }
 
         nav {
@@ -364,7 +389,7 @@
                 <path d="M 30 3 Q 28 -1 26 -2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
                 <path d="M 44 8 Q 42 4 40 2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
             </svg>
-            <span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Zen</span>
+            <div class="logo-text-wrap"><span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Giapponesi</span><span class="jp-label">日本庭園</span></div>
         </div>
         <button class="hamburger-menu" id="hamburgerBtn">
             <span></span>
@@ -385,8 +410,8 @@
 
     <!-- Intro Section -->
     <section class="intro">
-        <h1>Domande Frequenti</h1>
-        <p>Trova le risposte alle domande più comuni sui nostri servizi e sui giardini Zen.</p>
+        <h1>Domande Frequenti <span class="jp-label">よくある質問</span></h1>
+        <p>Trova le risposte alle domande più comuni sui nostri servizi e sui giardini giapponesi.</p>
     </section>
 
     <!-- FAQ Section -->
@@ -394,7 +419,7 @@
         <div class="faq-list">
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Quanto tempo ci vuole per realizzare un giardino Zen?</h3>
+                    <h3>Quanto tempo ci vuole per realizzare un giardino giapponese?</h3>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
@@ -404,7 +429,7 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Quali sono i costi per un giardino Zen?</h3>
+                    <h3>Quali sono i costi per un giardino giapponese?</h3>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
@@ -414,21 +439,21 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Posso avere un giardino Zen in uno spazio piccolo?</h3>
+                    <h3>Posso avere un giardino giapponese in uno spazio piccolo?</h3>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Assolutamente! Uno dei principi della filosofia Zen è l'armonia nello spazio minimalista. Creiamo giardini Zen in spazi di qualsiasi dimensione, dai piccoli balconi ai grandi terrazzamenti. Ogni spazio può diventare un'oasi di serenità.</p>
+                    <p>Assolutamente! Uno dei principi della filosofia Zen è l'armonia nello spazio minimalista. Creiamo giardini giapponesi in spazi di qualsiasi dimensione, dai piccoli balconi ai grandi terrazzamenti. Ogni spazio può diventare un'oasi di serenità.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Quale manutenzione richiede un giardino Zen?</h3>
+                    <h3>Quale manutenzione richiede un giardino giapponese?</h3>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>La manutenzione dipende dagli elementi scelti. I giardini Zen richiedono in genere meno manutenzione rispetto ai giardini tradizionali grazie al design minimalista. Offriamo servizi di manutenzione premium per assicurare che il vostro giardino rimanga sempre perfetto.</p>
+                    <p>La manutenzione dipende dagli elementi scelti. I giardini giapponesi richiedono in genere meno manutenzione rispetto ai giardini tradizionali grazie al design minimalista. Offriamo servizi di manutenzione premium per assicurare che il vostro giardino rimanga sempre perfetto.</p>
                 </div>
             </div>
 
@@ -464,7 +489,7 @@
 
         <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;">
             <input type="hidden" name="access_key" value="7b9ddbe1-8e87-46e0-8d83-3dd3e7a3b9d8">
-            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Zen">
+            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Giapponesi">
             <input type="checkbox" name="botcheck" style="display:none">
 
             <div style="margin-bottom: 1.2rem;">
@@ -485,8 +510,8 @@
             <div style="margin-bottom: 1.2rem;">
                 <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Tipo di richiesta</label>
                 <select name="tipo_richiesta" style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
-                    <option>Preventivo giardino Zen esterno</option>
-                    <option>Preventivo giardino Zen interno</option>
+                    <option>Preventivo giardino giapponese esterno</option>
+                    <option>Preventivo giardino giapponese interno</option>
                     <option>Consulenza di design</option>
                     <option>Manutenzione premium</option>
                     <option>Informazioni generali</option>
@@ -509,11 +534,11 @@
     </section>
 
     <footer>
-        <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Zen. | P.IVA 03120250166 | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
+        <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Giapponesi. | P.IVA 03120250166 | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Zen" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
+    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Giapponesi" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
         💬
     </a>
 

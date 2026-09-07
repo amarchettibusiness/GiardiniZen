@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articoli | CI.EMME Giardini Zen</title>
+    <title>Articoli | CI.EMME Giardini Giapponesi</title>
     <style>
         * {
             margin: 0;
@@ -86,6 +86,31 @@
             color: var(--sage-green);
             font-weight: 500;
             letter-spacing: 0.03em;
+        }
+
+        .jp-label {
+            color: #e5002b;
+            font-size: 1.4rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .logo-text-wrap {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .logo .jp-label {
+            margin-top: 0.15rem;
+            font-size: 0.9rem;
+        }
+
+        h1 .jp-label, h2 .jp-label {
+            display: block;
+            margin-top: 0.6rem;
+            font-family: "Inter", sans-serif;
         }
 
         nav {
@@ -524,7 +549,7 @@
                 <path d="M 30 3 Q 28 -1 26 -2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
                 <path d="M 44 8 Q 42 4 40 2" stroke="#a8c8a8" stroke-width="1.5" fill="none" opacity="0.6"/>
             </svg>
-            <span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Zen</span>
+            <div class="logo-text-wrap"><span class="logo-text">CI.<span class="logo-emme">EMME</span> Giardini Giapponesi</span><span class="jp-label">日本庭園</span></div>
         </div>
         <button class="hamburger-menu" id="hamburgerBtn">
             <span></span>
@@ -545,8 +570,8 @@
 
     <!-- Intro Section -->
     <section class="intro">
-        <h1>Articoli e Risorse</h1>
-        <p>Scopri consigli, guide e approfondimenti sul mondo dei giardini Zen.</p>
+        <h1>Articoli e Risorse <span class="jp-label">記事</span></h1>
+        <p>Scopri consigli, guide e approfondimenti sul mondo dei giardini giapponesi.</p>
     </section>
 
     <!-- Articles Grid -->
@@ -559,7 +584,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Pronti a trasformare il vostro spazio?</h2>
-        <p>Contattate CI.EMME Giardini Zen per una consulenza esclusiva e scoprite come creare il vostro giardino Zen personalizzato.</p>
+        <p>Contattate CI.EMME Giardini Giapponesi per una consulenza esclusiva e scoprite come creare il vostro giardino giapponese personalizzato.</p>
         <a href="index.html#contact" class="cta-button">Richiedi una consulenza →</a>
     </section>
 
@@ -573,7 +598,7 @@
 
         <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;">
             <input type="hidden" name="access_key" value="7b9ddbe1-8e87-46e0-8d83-3dd3e7a3b9d8">
-            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Zen">
+            <input type="hidden" name="subject" value="Nuova richiesta dal sito CI.EMME Giardini Giapponesi">
             <input type="checkbox" name="botcheck" style="display:none">
 
             <div style="margin-bottom: 1.2rem;">
@@ -594,8 +619,8 @@
             <div style="margin-bottom: 1.2rem;">
                 <label style="display:block; margin-bottom: 0.4rem; font-size: 0.9rem; opacity: 0.8;">Tipo di richiesta</label>
                 <select name="tipo_richiesta" style="width:100%; padding: 0.9rem; border: 1px solid #ccc; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 1rem;">
-                    <option>Preventivo giardino Zen esterno</option>
-                    <option>Preventivo giardino Zen interno</option>
+                    <option>Preventivo giardino giapponese esterno</option>
+                    <option>Preventivo giardino giapponese interno</option>
                     <option>Consulenza di design</option>
                     <option>Manutenzione premium</option>
                     <option>Informazioni generali</option>
@@ -620,8 +645,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>CI.EMME Giardini Zen</h4>
-                <p>Specialisti nella creazione di giardini Zen.</p>
+                <h4>CI.EMME Giardini Giapponesi</h4>
+                <p>Specialisti nella creazione di giardini giapponesi.</p>
             </div>
             <div class="footer-section">
                 <h4>Contatti</h4>
@@ -633,12 +658,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Zen. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
+            <p>&copy; <span id="currentYear">2024</span> CI.EMME Giardini Giapponesi. | <a href="privacy.html" style="color: var(--sage-light); text-decoration: none;">Privacy Policy</a> | <a href="termini.html" style="color: var(--sage-light); text-decoration: none;">Terms</a></p>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Zen" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
+    <a href="https://wa.me/393487036996?text=Ciao%2C%20vorrei%20informazioni%20su%20CI.EMME%20Giardini%20Giapponesi" class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Contattaci su WhatsApp">
         💬
     </a>
 
@@ -721,24 +746,24 @@
         const articlesGrid = document.getElementById('articlesGrid');
 
         const articoliData = [
-            { num: 1, titolo: "Come creare un giardino Zen: principi fondamentali", intro: "Scopri i principi essenziali della filosofia Zen applicati al design dei giardini moderni.", data: "21 Agosto 2026" },
-            { num: 2, titolo: "Manutenzione estiva dei giardini: consigli pratici", intro: "Come prendersi cura del proprio giardino Zen durante i mesi più caldi dell'anno.", data: "9 Agosto 2026" },
+            { num: 1, titolo: "Come creare un giardino giapponese: principi fondamentali", intro: "Scopri i principi essenziali della filosofia Zen applicati al design dei giardini moderni.", data: "21 Agosto 2026" },
+            { num: 2, titolo: "Manutenzione estiva dei giardini: consigli pratici", intro: "Come prendersi cura del proprio giardino giapponese durante i mesi più caldi dell'anno.", data: "9 Agosto 2026" },
             { num: 3, titolo: "Elementi Zen: rocce e pietre nel design moderno", intro: "L'arte di selezionare e posizionare rocce e pietre per creare composizioni armoniose.", data: "28 Luglio 2026" },
-            { num: 4, titolo: "Giardini verticali: trasformare spazi limitati", intro: "Come creare un affascinante giardino Zen verticale anche quando lo spazio è ridotto.", data: "16 Luglio 2026" },
+            { num: 4, titolo: "Giardini verticali: trasformare spazi limitati", intro: "Come creare un affascinante giardino giapponese verticale anche quando lo spazio è ridotto.", data: "16 Luglio 2026" },
             { num: 5, titolo: "Acqua e Zen: fontane, laghetti e il suono della serenità", intro: "Il ruolo dell'acqua nella filosofia Zen e come integrarla nel proprio giardino.", data: "4 Luglio 2026" },
             { num: 6, titolo: "Il Feng Shui e lo Zen: differenze e punti in comune", intro: "Due filosofie orientali spesso confuse: scopriamo cosa le accomuna e cosa le distingue nel design del giardino.", data: "22 Giugno 2026" },
-            { num: 7, titolo: "Bonsai: l'arte della cura e della pazienza", intro: "Guida introduttiva alla coltivazione dei bonsai, elemento iconico di ogni giardino Zen.", data: "10 Giugno 2026" },
+            { num: 7, titolo: "Bonsai: l'arte della cura e della pazienza", intro: "Guida introduttiva alla coltivazione dei bonsai, elemento iconico di ogni giardino giapponese.", data: "10 Giugno 2026" },
             { num: 8, titolo: "Il rastrellamento della ghiaia: pattern e significato", intro: "Uno degli elementi più riconoscibili del karesansui, il giardino secco giapponese.", data: "29 Maggio 2026" },
-            { num: 9, titolo: "Ponti e passerelle nel giardino Zen", intro: "Come questi elementi architettonici guidano il percorso fisico ed emotivo nel giardino.", data: "17 Maggio 2026" },
+            { num: 9, titolo: "Ponti e passerelle nel giardino giapponese", intro: "Come questi elementi architettonici guidano il percorso fisico ed emotivo nel giardino.", data: "17 Maggio 2026" },
             { num: 10, titolo: "Lanterne in pietra: storia e funzione", intro: "Il ruolo estetico e simbolico delle lanterne (toro) nei giardini giapponesi.", data: "5 Maggio 2026" },
-            { num: 11, titolo: "Illuminazione notturna per giardini Zen", intro: "Come progettare un'illuminazione che rispetti l'atmosfera serena dello spazio anche di notte.", data: "23 Aprile 2026" },
-            { num: 12, titolo: "Giardini Zen per uffici e spazi corporate", intro: "Perché sempre più aziende scelgono di integrare spazi Zen nei propri ambienti di lavoro.", data: "11 Aprile 2026" },
-            { num: 13, titolo: "Quanto costa un giardino Zen: guida al budget", intro: "Una panoramica sui fattori che influenzano il costo di realizzazione di un giardino Zen su misura.", data: "30 Marzo 2026" },
-            { num: 14, titolo: "Materiali sostenibili per il tuo giardino Zen", intro: "Come progettare un giardino Zen rispettoso dell'ambiente senza rinunciare all'eleganza.", data: "18 Marzo 2026" },
-            { num: 15, titolo: "Cura del giardino Zen in inverno", intro: "Consigli pratici per proteggere piante ed elementi del giardino durante la stagione fredda.", data: "6 Marzo 2026" },
-            { num: 16, titolo: "Come scegliere le piante giuste per un giardino Zen", intro: "Una guida alle specie vegetali più adatte per creare equilibrio e armonia nel proprio spazio.", data: "22 Febbraio 2026" },
-            { num: 17, titolo: "Trasformare un giardino tradizionale in giardino Zen", intro: "Come procedere passo dopo passo per convertire uno spazio verde esistente in un'oasi Zen.", data: "10 Febbraio 2026" },
-            { num: 18, titolo: "Il muschio: bellezza silenziosa nel giardino Zen", intro: "Un elemento spesso sottovalutato ma fondamentale per l'atmosfera dei giardini giapponesi.", data: "29 Gennaio 2026" },
+            { num: 11, titolo: "Illuminazione notturna per giardini giapponesi", intro: "Come progettare un'illuminazione che rispetti l'atmosfera serena dello spazio anche di notte.", data: "23 Aprile 2026" },
+            { num: 12, titolo: "Giardini Giapponesi per uffici e spazi corporate", intro: "Perché sempre più aziende scelgono di integrare spazi Zen nei propri ambienti di lavoro.", data: "11 Aprile 2026" },
+            { num: 13, titolo: "Quanto costa un giardino giapponese: guida al budget", intro: "Una panoramica sui fattori che influenzano il costo di realizzazione di un giardino giapponese su misura.", data: "30 Marzo 2026" },
+            { num: 14, titolo: "Materiali sostenibili per il tuo giardino giapponese", intro: "Come progettare un giardino giapponese rispettoso dell'ambiente senza rinunciare all'eleganza.", data: "18 Marzo 2026" },
+            { num: 15, titolo: "Cura del giardino giapponese in inverno", intro: "Consigli pratici per proteggere piante ed elementi del giardino durante la stagione fredda.", data: "6 Marzo 2026" },
+            { num: 16, titolo: "Come scegliere le piante giuste per un giardino giapponese", intro: "Una guida alle specie vegetali più adatte per creare equilibrio e armonia nel proprio spazio.", data: "22 Febbraio 2026" },
+            { num: 17, titolo: "Trasformare un giardino tradizionale in giardino giapponese", intro: "Come procedere passo dopo passo per convertire uno spazio verde esistente in un'oasi Zen.", data: "10 Febbraio 2026" },
+            { num: 18, titolo: "Il muschio: bellezza silenziosa nel giardino giapponese", intro: "Un elemento spesso sottovalutato ma fondamentale per l'atmosfera dei giardini giapponesi.", data: "29 Gennaio 2026" },
             { num: 19, titolo: "Spazi meditativi in casa: creare un angolo di pace", intro: "Come ricavare un piccolo spazio dedicato alla meditazione anche in un appartamento.", data: "17 Gennaio 2026" },
             { num: 20, titolo: "Zen e sostenibilità: un binomio naturale", intro: "Perché la filosofia Zen è, per sua natura, già orientata verso un approccio sostenibile al giardino.", data: "5 Gennaio 2026" }
         ];

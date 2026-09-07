@@ -1,7 +1,7 @@
 ======================================
-CI.EMME GIARDINI ZEN - Archivio Sito
+CI.EMME GIARDINI GIAPPONESI - Archivio Sito
 ======================================
-Versione aggiornata al 29/08/2026
+Versione aggiornata al 07/09/2026
 
 CONTENUTO:
 - 30 file HTML: tutte le pagine del sito
@@ -9,40 +9,38 @@ CONTENUTO:
 - cartella articles/: dove mettere le foto dei 20 articoli del blog
 
 NOVITA' IN QUESTA VERSIONE:
+- Etichetta giapponese nel LOGO (barra in alto) ora impilata SOTTO
+  al nome dell'azienda, non piu' accanto, su tutte le 30 pagine
+- Etichette giapponesi ingrandite (1.4rem), rosso acceso (#e5002b),
+  posizionate sotto al titolo italiano su homepage e H1 di ogni
+  pagina dedicata (chi-siamo, servizi, portfolio, metodo, articoli,
+  faq, privacy, termini)
+- Le 20 pagine dei singoli articoli NON hanno etichetta giapponese
+  sul titolo (solo il logo header la mantiene, come ovunque)
+- REBRANDING COMPLETO: "Giardini Zen" -> "Giardini Giapponesi" in tutto
+  il sito (logo, titoli pagina, footer, testi, messaggio WhatsApp).
+  Le menzioni a "filosofia Zen / elementi Zen / principi Zen" nei
+  contenuti degli articoli sono state mantenute perche' corrette
 - Email aggiornata: info@ciemmegiardini.it
 - Testi "chi siamo/servizi/metodo/faq" riscritti: focus su 20 anni di
   esperienza diretta, specializzazione in progettazione del verde e
-  manutenzione, niente piu' riferimenti ad architetti/render 3D esterni
-- Aggiunta menzione "giardini tradizionali" oltre ai giardini Zen
+  manutenzione, niente riferimenti ad architetti/render 3D esterni
 - Portfolio dinamico: foto mancanti mostrano "In arrivo"; i primi 6
   slot, se compilati, mostrano l'etichetta "Progetto illustrativo"
-  (sempre visibile, non solo al passaggio del mouse)
-- Divisori verticali trasformati in piccola composizione di canne di bambu'
-- Sezione "Il nostro metodo": numeri step ora centrati correttamente
-  col testo; sfondo con foto coerente tra homepage e pagina dedicata;
-  griglia dei 4 step forzata su una sola riga da desktop
-- Checkbox di consenso privacy obbligatoria aggiunta a TUTTI i form
-  di richiesta preventivo (28 pagine), con link alla Privacy Policy
-- Partita IVA (03120250166) ora visibile nel footer di TUTTE le pagine
-- Titolo pagina (tag <title>) corretto: rimosso "di Lusso"
-- Social collegati nella homepage: Instagram, Facebook e TikTok reali
-  (Google Business ancora da collegare quando disponibile)
-- Form di contatto gia' funzionante con Web3Forms (access key inclusa)
+- Divisori verticali trasformati in composizione di canne di bambu'
+- Checkbox di consenso privacy obbligatoria su TUTTI i form (28 pagine)
+- Partita IVA (03120250166) visibile nel footer di TUTTE le pagine
+- Social collegati nella homepage: Instagram, Facebook, TikTok reali
+- Form di contatto funzionante con Web3Forms (access key inclusa)
 
 COME USARLO:
 1. Estrai questo archivio
 2. Carica TUTTO il contenuto (file HTML + cartelle images e articles)
    nella root del tuo repository GitHub (quello collegato al dominio)
 3. Aggiungi le tue foto reali nelle cartelle images/ e articles/
-   seguendo i nomi indicati nei file DOVE-METTERE-LE-FOTO.txt
 4. Fai commit/push: GitHub Pages aggiorna il sito live in pochi minuti
 
 DA FARE QUANDO DISPONIBILE:
-- Link alla scheda Google Business (attualmente placeholder nel footer
-  della homepage, cerca "TUA_PAGINA_GOOGLE_BUSINESS")
-- ID Google Analytics e Google Search Console (attualmente placeholder
-  "G-XXXXXXXXXX" nel cookie banner di ogni pagina)
-
-NOTA: la pagina "articolo1-TEMPLATE.html" e' un modello di riserva,
-utile solo se in futuro vuoi creare un articolo numero 21 in poi.
-Puoi anche non caricarla, non e' collegata a nessun menu del sito.
+- Link alla scheda Google Business (placeholder nel footer homepage)
+- ID Google Analytics e Google Search Console (placeholder nel
+  cookie banner di ogni pagina)
